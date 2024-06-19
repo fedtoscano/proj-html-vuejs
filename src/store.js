@@ -30,7 +30,54 @@ export const store = reactive({
         pic: "./assets/imgs/player4.jpg"
         },
     ],
-
+    upcomingMatches: [
+        {
+            id: 1,
+            team1: "Schalke Club",
+            team1_logo: "./assets/imgs/league-club-3.png",
+            team2: "Inter Club",
+            team2_logo: "./assets/imgs/league-club-4.png",
+            date: "October 20, 2022 17.00 pm",
+            location: "Expert Stadium"
+        },
+        {
+            id: 2,
+            team1: "Atletico Club",
+            team1_logo: "./assets/imgs/league-club-9.png",
+            team2: "Shalke Club",
+            team2_logo: "./assets/imgs/league-club-6.png",
+            date: "September 18, 2022 21:00 pm",
+            location: "Expert Stadium"
+        },
+        {
+            id: 3,
+            team1: "United Fs Club",
+            team1_logo: "./assets/imgs/league-club-2.png",
+            team2: "Bayern Club",
+            team2_logo: "./assets/imgs/league-club-8.png",
+            date: "August 3, 2022 19:00 pm ",
+            location: "Expert Stadium"
+        },
+        {
+            id: 4,
+            team1: "Arsenal Club",
+            team1_logo: "./assets/imgs/league-club-7.png",
+            team2: "Atletico Club",
+            team2_logo: "./assets/imgs/league-club-9.png",
+            date: "July 8, 2022 12:00 pm ",
+            location: "Expert Stadium"
+        },
+        {
+            id: 1,
+            team1: "Istanbul Sports",
+            team1_logo: "./assets/imgs/league-club-1.png",
+            team2: "United Fs Club",
+            team2_logo: "./assets/imgs/league-club-2.png",
+            date: "June 12, 2022 09:00 am",
+            location: "Expert Stadium"
+        },
+    ],
+    
     teams: [
         {
             id: 1,
