@@ -59,7 +59,20 @@
 <template>
     <footer>
         <div class="d-flex">
-            <div class="footer-newsletter">
+            <div class="contacts w-30">
+                <img src="../assets/imgs/logo-footer-football.png" alt="Logo">
+                <nav>
+                    <ul>
+                        <li>
+                            'New Jersey, USA',
+                    '+1(234)5678910',
+                    'example@example.com',
+                        </li>
+                        <font-awesome-icon icon="fa-regular fa-map" />
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-newsletter w-40">
                 <h1>
                     Join our newsletter
                 </h1>
@@ -71,7 +84,7 @@
                     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Your Email Address">
                 </div>
             </div>
-            <div class="footer-education">
+            <div class="footer-education w-20">
                 <h1>
                     Education
                 </h1>
@@ -83,7 +96,7 @@
                     </ul>
                 </nav>
             </div>
-            <div class="footer-quick-links">
+            <div class="footer-quick-links w-10">
                 <h1>
                     Quick Links
                 </h1>
