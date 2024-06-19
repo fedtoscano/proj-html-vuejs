@@ -29,6 +29,18 @@ export const store = reactive({
         role: "Forwarder",
         pic: "../src/assets/imgs/player4.jpg"
         },
+        {
+        name: "James Johnson",
+        number: "21",
+        role: "Defender",
+        pic: "../src/assets/imgs/player5.jpg"
+        },
+        {
+        name: "Charlie Roy",
+        number: "02",
+        role: "Goalkeeper",
+        pic: "../src/assets/imgs/player6.jpg"
+        },
     ],
     upcomingMatches: [
         {
