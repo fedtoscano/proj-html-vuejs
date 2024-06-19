@@ -1,13 +1,21 @@
 <script>
-export default {
-data() {
-return {  
-}
-}}
+    import AppFooter from './components/AppFooter.vue';
+    
+    export default {
+    data() {
+        return {
+
+        }
+    },
+        components: {
+            AppFooter,
+        }
+    }
 </script>
 
 <template>
+    <AppFooter/>
 </template>
 
-<style>
+<style scoped>
 </style>
