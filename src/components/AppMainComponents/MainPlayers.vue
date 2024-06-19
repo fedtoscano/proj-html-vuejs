@@ -22,7 +22,7 @@ return {
 
             <div class="players-carousel">
 
-                <article v-for="(player, index) in store.players">
+                <article v-for="(player, index) in store.players" :key="index">
                     <div class="image-container">
                         <img :src="player.pic" :alt="`${player.name} official photo`">
 
