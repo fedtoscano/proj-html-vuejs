@@ -1,5 +1,13 @@
+
 <script>
+import AppMain from './components/AppMain.vue'
+
+
 export default {
+    components:{
+        AppMain
+
+    },
 data() {
 return {  
 }
@@ -7,6 +15,7 @@ return {
 </script>
 
 <template>
+
 </template>
 
 <style>
