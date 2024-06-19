@@ -173,6 +173,33 @@ export const store = reactive({
             logo: "../src/assets/imgs/league-club-9.png"
         },
     ],
+    
+    sponsors:[
+        {
+            id:1,
+            img: "../src/assets/imgs/client2.png",
+        },
+        {
+            id:2,
+            img: "../src/assets/imgs/client3.png",
+        },
+        {
+            id:3,
+            img: "../src/assets/imgs/client4.png",
+        },
+        {
+            id:4,
+            img: "../src/assets/imgs/client7.png",
+        },
+        {
+            id:5,
+            img: "../src/assets/imgs/client9.png",
+        },
+        {
+            id:16,
+            img: "../src/assets/imgs/client10.png",
+        },
+    ],
 
     blogArticles: [
         {
