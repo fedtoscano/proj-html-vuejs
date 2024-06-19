@@ -46,6 +46,8 @@ return {
 
 .container{
     background-image: url(../../assets/imgs/player.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
     height: 764px;
 
     .players-container{
