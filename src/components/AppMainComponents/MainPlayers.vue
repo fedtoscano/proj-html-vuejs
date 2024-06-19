@@ -16,8 +16,7 @@ return {
 </script>
 
 <template>
-   <p>MainPlayers</p>
-
+   
 </template>
 
 <style>

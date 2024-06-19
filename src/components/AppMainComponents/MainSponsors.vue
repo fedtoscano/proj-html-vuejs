@@ -16,7 +16,7 @@ return {
 </script>
 
 <template>
-   <p>MainSponsors</p>
+   
 
 </template>
 

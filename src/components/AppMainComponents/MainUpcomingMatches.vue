@@ -16,7 +16,7 @@ return {
 </script>
 
 <template>
-   <p>MainUpcomingMatches</p>
+  
 
 </template>
 
