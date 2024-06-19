@@ -23,10 +23,22 @@ methods: {
                 this.x ++;
             }
         },
+    changeImageTimer(){
+        setInterval(() => {
+            if (this.x >= this.store.CarouselContent.length - 1) {
+                this.x = 0;
+            } else if(this.x < 0) {
+                this.x = this.store.CarouselContent.length - 1;
+            }
+            this.x++
+        
+        }, 4000);
+    }
 },
 created() {
     this.previous();
     this.next();
+    this.changeImageTimer();
 }
 }
 </script>
@@ -39,14 +51,14 @@ created() {
                     <img :src="slide.image"/>
                 </div>
                 <div class="text">
-                    <h1 class="mb-3">{{slide.title}}</h1>
-                    <h3 class="mb-4">
+                    <h1>{{slide.title}}</h1>
+                    <h3>
                         {{slide.text}}
                     </h3>
-                    <button class="btn-learn">learn more</button>
-                </div>
-                <button @click="previous" id="previous">previous</button>
-                <button @click="next" id="next">next</button>
+                    <button class="btn-learn">learn more <font-awesome-icon icon="fa-solid fa-arrow-right" /></button>
+                </div>  
+                <span @click="previous" id="previous"><font-awesome-icon icon="fa-solid fa-caret-left" /></span>
+                <span @click="next" id="next"><font-awesome-icon icon="fa-solid fa-caret-right"/></span>
                 </div>
             </div>
     </div>
@@ -69,9 +81,11 @@ created() {
         h1{
             font-size: 3.5rem;
             font-weight: 900;
+            margin-bottom: 1rem;
         }
         h3{
             font-size: 1rem;
+            margin-bottom: 1rem;
             font-weight: 900;
         }
         .btn-learn{
@@ -80,6 +94,7 @@ created() {
             border: 1px solid white;
             padding: 1rem 2.5rem;
             border-radius: 30px;
+            font-weight: 900;
         }
     }
     #previous{
@@ -87,12 +102,22 @@ created() {
         top: 50%;
         left: 5%;
         transform: translate(-50%, -50%);
+        color: white;
+        font-size: 2rem;
+        border: 1px solid white;
+        padding: 1rem 1.5rem;
+        border-radius: 50%;
     }
     #next{
         position: absolute;
         top: 50%;
         right: 5%;
         transform: translate(-50%, -50%);
+        color: white;
+        font-size: 2rem;
+        border: 1px solid white;
+        padding: 1rem 1.5rem;
+        border-radius: 50%;
     }
 }
 img{
