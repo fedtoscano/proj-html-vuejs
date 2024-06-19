@@ -51,7 +51,7 @@ return {
     height: 764px;
 
     .players-container{
-        // max-width: 1200px;
+        max-width: 1600px;
         margin: 0 auto;
         color: white;
         display: flex;
@@ -67,11 +67,12 @@ return {
         .players-carousel{
             display: flex;
             overflow: hidden;
-            flex-wrap: wrap;
+            white-space: nowrap;
             gap: 2rem;
             align-items: center;
 
             article{
+                flex: 0 0 auto;
                 width: calc((100% / 4) - 2rem);
                 overflow: hidden;
                 border-radius: 3rem;
