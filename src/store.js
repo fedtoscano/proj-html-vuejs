@@ -113,7 +113,48 @@ export const store = reactive({
             points: 20,
             logo: "./assets/imgs/league-club-9.png"
         },
+    ],
 
-
+    blogArticles: [
+        {
+            id: 1,
+            date: "29.05.2022",
+            topic: "Football",
+            title: "What is Football?",
+            text: "Football is a sport that is knows as a ball game and is loved by [...]",
+            img: "./assets/imgs/news1-1.png",
+        },
+        {
+            id: 2,
+            date: "29.05.2022",
+            topic: "Football",
+            title: "Football Rules",
+            text: "GOLDEN GOAL: In a football match, the goal scored by one of the teams in [...]",
+            img: "./assets/imgs/news3-1.png",
+        },
+        {
+            id: 3,
+            date: "29.05.2022",
+            topic: "Football",
+            title: "Football Features",
+            text: "Football: it is an aerobic-based anaerobic sport in which jumps, kicks, turns, running with changing [...]",
+            img: "./assets/imgs/news2-1.png",
+        },
+        {
+            id: 4,
+            date: "29.05.2022",
+            topic: "Football",
+            title: "Football Terms",
+            text: "GOLDEN GOAL: In a football match, the goal scored by one of the teams in [...]",
+            img: "./assets/imgs/news4-1.png",
+        },
+        {
+            id: 5,
+            date: "29.05.2022",
+            topic: "Football",
+            title: "How many football players are there in the world?",
+            text: "According to this report, there are more than 301 thousand football clubs, over 1.752 million [...]",
+            img: "./assets/imgs/news6-1.png",
+        },
     ]
 })
