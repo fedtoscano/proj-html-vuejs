@@ -16,9 +16,6 @@ return {
 
 <template>
 
-    <AppMain/>
-
-
 </template>
 
 <style>
