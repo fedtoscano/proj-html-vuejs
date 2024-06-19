@@ -16,7 +16,21 @@ return {
 </script>
 
 <template>
-   <p>MainNextMatch</p>
+    <article>
+        <div>
+            <p></p>
+
+        </div>
+        <p>
+
+        </p>
+        <div>
+
+        </div>
+
+
+    </article>
+   
 
 </template>
 
