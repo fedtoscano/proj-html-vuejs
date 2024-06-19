@@ -49,32 +49,53 @@ return {
     height: 764px;
 
     .players-container{
-        max-width: 1200px;
+        // max-width: 1200px;
         margin: 0 auto;
         color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem;
+
+            h2{
+                font-size: 2em;
+                margin-bottom: 3rem;
+            }
 
         .players-carousel{
             display: flex;
             overflow: hidden;
             flex-wrap: wrap;
-            gap: 1.5rem;
+            gap: 2rem;
+            align-items: center;
 
             article{
-                width: calc((100% / 4) - 1.5rem);
-                position: relative;
+                width: calc((100% / 4) - 2rem);
+                overflow: hidden;
+                border-radius: 3rem;
 
                 .image-container{
                     width: 100%;
+                    position: relative;
                     img{
                         width: 100%;
-                        border-radius: 3rem;
                     }
 
                     .info-container{
-                    height: 30%;
+                    font-size: 1.1em;
+                    font-weight: bold;
                     text-align: center;
                     background-color: black;
                     border-radius: 3rem;
+                    padding: 1rem;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+
+                    p{
+                        margin-bottom: 1em;
+                    }
                 }
                 }
 
