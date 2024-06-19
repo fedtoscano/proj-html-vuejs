@@ -13,9 +13,14 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { faCaretLeft } from '@fortawesome/free-solid-svg-icons'
 import { faCaretRight } from '@fortawesome/free-solid-svg-icons'
 
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
+import { faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+
+
 
 /* add icons to the library */
-library.add(faArrowRight, faCaretLeft, faCaretRight)
+library.add(faArrowRight, faCaretLeft, faCaretRight, faFacebookF, faInstagram, faTwitter)
 
 createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)
