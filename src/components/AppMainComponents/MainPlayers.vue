@@ -46,14 +46,16 @@ methods:{
 
 <template>
     <div class="container">
-        <div class="players-container">
+        <div class="players-container"v-dragscroll.x>
             <h2>Players</h2>
 
-            <div class="players-carousel" v-dragscroll.x>
+            <div class="players-carousel">
 
                 <article v-for="(player, index) in store.players" :key="index">
                     <div class="image-container">
-                        <img :src="player.pic" :alt="`${player.name} official photo`">
+                        <a href="#">
+                            <img :src="player.pic" :alt="`${player.name} official photo`">
+                        </a>
 
                         <div class="info-container">
                             <p>{{player.number}}</p>
@@ -65,7 +67,7 @@ methods:{
 
             </div>
             
-            <button>View All Players</button>
+            <button><a href="#">View All Players</a></button>
         </div>
     </div>
 </template>
@@ -102,6 +104,10 @@ methods:{
                 align-self: center;
                 border-radius: 70px;
                 border: 1px solid white;
+                a{
+                    text-decoration: none;
+                    color: white;
+                }
             }
         .players-carousel{
             display: flex;
