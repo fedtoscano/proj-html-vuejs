@@ -46,8 +46,9 @@ created() {
                     <h3>{{ data.event_name }}</h3>
                     <h4>{{ data.type }}</h4>
                     <div class="date">
-                        <p>start: {{ data.start_date }}</p>
-                        <p>end: {{ data.end_date }}</p>
+                        <p><font-awesome-icon icon="fa-regular fa-calendar" /> {{ data.start_date }}</p>
+                        <p><font-awesome-icon icon="fa-regular fa-calendar" /> {{ data.end_date }}</p>
+                        <p><font-awesome-icon icon="fa-solid fa-location-dot" />  {{ data.location }}</p>
                     </div>
                 </div>
             </li>
@@ -93,6 +94,8 @@ li{
     .content{
         padding: 1rem;
         font-weight: 800;
+        text-align: center;
+        line-height: 24px;
     }
     &:hover{
         width: 22%;

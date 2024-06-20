@@ -19,11 +19,11 @@ import { faCaretRight } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
-
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 
 
 /* add icons to the library */
-library.add(faArrowRight, faCaretLeft, faCaretRight, faFacebookF, faInstagram, faTwitter, faMap,faCalendar)
+library.add(faArrowRight, faCaretLeft, faCaretRight, faFacebookF, faInstagram, faTwitter, faMap,faCalendar,faLocationDot)
 
 
 createApp(App)
