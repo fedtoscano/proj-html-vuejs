@@ -11,7 +11,33 @@ export default {
 data() {
 return {  
     store,
+
+    // items: Array.from(),
+    // isDown: false,
+    // startX: 0,
+    // scrollLeft:0
 }
+},
+methods:{
+    // startDrag(event){
+    //     this.isDown = true;
+
+    //     this.startX = event.pageX - this.$refs.items.offsetLeft;        
+    //     this.scrollLeft = this.$refs.items.scrollLeft
+    //     console.log(this.startX)
+    // },
+    // stopDrag(){
+    //     this.isDown = false;
+    // },
+    // isDragging(event){
+    //     if(!this.isDown){
+    //         return
+    //     } 
+    //     event.preventDefault();
+    //     const x = event.pageX - this.$refs.items.offsetLeft;
+    //     const dragValue = (x - this.startX)
+    //     this.$refs.items.scrollLeft = this.scrollLeft - dragValue
+    // }
 }}
 </script>
 
@@ -66,10 +92,10 @@ return {
 
         .players-carousel{
             display: flex;
-            overflow: hidden;
-            white-space: nowrap;
+            overflow-x: auto;
             gap: 2rem;
             align-items: center;
+        }
 
             article{
                 flex: 0 0 auto;
@@ -106,6 +132,6 @@ return {
             }
         }
     }
-}
+
 
 </style>
