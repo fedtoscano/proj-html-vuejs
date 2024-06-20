@@ -17,7 +17,7 @@ return {
 </script>
 
 <template>
-   <p>Mainarticles</p>
+   
 
 </template>
 
