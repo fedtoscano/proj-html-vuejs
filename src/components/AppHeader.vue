@@ -32,7 +32,7 @@ return {
         left: 0%;
         right: 0;
         z-index: 1;
-        padding: 1rem;
+        padding: 1.3rem;
     }
 }
 </style>
