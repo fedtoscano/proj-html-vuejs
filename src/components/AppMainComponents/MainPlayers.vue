@@ -61,7 +61,8 @@ methods:{
                 </article>
 
             </div>
-
+            
+            <button>View All Players</button>
         </div>
     </div>
 </template>
@@ -71,9 +72,9 @@ methods:{
 
 .container{
     background-image: url(../../assets/imgs/player.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 764px;
+    
 
     .players-container{
         max-width: 1600px;
@@ -89,11 +90,22 @@ methods:{
                 margin-bottom: 3rem;
             }
 
+            button{
+        padding: 1.5rem 2.7rem;
+        font-size: 1rem;
+        font-weight: bold;
+        color: white;
+        background-color: black;
+        align-self: center;
+        border-radius: 70px;
+        border: 1px solid white;
+    }
         .players-carousel{
             display: flex;
             overflow-x: auto;
             gap: 2rem;
             align-items: center;
+            margin-bottom: 2em;
         }
 
             article{
