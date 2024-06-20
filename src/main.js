@@ -9,15 +9,20 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
+
 import { faMap } from '@fortawesome/free-regular-svg-icons'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faCaretLeft } from '@fortawesome/free-solid-svg-icons'
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons'
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
+import { faInstagram } from '@fortawesome/free-brands-svg-icons'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faNoteSticky } from '@fortawesome/free-regular-svg-icons'
 import { faMessage } from '@fortawesome/free-regular-svg-icons/faMessage'
 
-/* add icons to the library */
-library.add(faMap)
-library.add(faMessage)
-library.add(faNoteSticky)
 
+/* add icons to the library */
+library.add(faArrowRight, faNoteSticky, faCaretLeft, faCaretRight, faFacebookF, faInstagram, faTwitter, faMap, faMessage)
 
 createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)
