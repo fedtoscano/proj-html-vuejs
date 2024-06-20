@@ -37,6 +37,7 @@ return {
         </div>
 
         <div class="data">
+            <font-awesome-icon icon="fa-regular fa-calendar" />
             <p>May 21, 2022 18:05pm</p>
 
             <p>Expert Stadium</p>
