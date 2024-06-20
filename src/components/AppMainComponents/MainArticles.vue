@@ -44,7 +44,7 @@ return {
                     <p>{{ article.text }}</p>
                 </div>
 
-                <button>More</button>
+                <button><a href="#">More</a></button>
 
             </article>
             
@@ -102,6 +102,10 @@ return {
         align-self: center;
         border-radius: 70px;
         border: 1px solid white;
+        a{
+                    text-decoration: none;
+                    color: white;
+                }
     }
         article.info{
         margin-bottom: 2em;
