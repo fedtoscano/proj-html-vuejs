@@ -81,7 +81,7 @@
     <footer>
         <div class="container">
             <div class="row d-flex">
-                <div class="contacts-list col-lg-4">
+                <div class="contacts-list col-lg-3">
                     <div class="logo">
                         <img src="../assets/imgs/logo-footer-football.png" alt="Logo">
                     </div>
@@ -108,6 +108,17 @@
                                 </li>
                             </ul>
                         </nav>
+                        <div class="socials">
+                            <a href="#">
+                                <font-awesome-icon icon="fa-brands fa-facebook-f" />
+                            </a>
+                            <a href="#">
+                                <font-awesome-icon icon="fa-brands fa-instagram" />
+                            </a>
+                            <a href="#">
+                                <font-awesome-icon icon="fa-brands fa-twitter" />
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="footer-newsletter col-lg-4">
@@ -120,19 +131,19 @@
                     <!--  prevent impredisce di refreshare-->
                     <!-- ascolta con v-on l'evento di submit del form -->
                     <form @click.prevent="handleSubmit">
-                            <label for="email"></label>
-                            <!-- V_model collega l'input dell'email al dato email nei data Vue -->
-                            <input id="email" v-model="email" type="email" placeholder="Your email address">
-                            <p>
-                                {{ statusMail }}
-                            </p>
-                            <button type="submit">Subscribe</button>
-                            <p>
-                                {{ voidField }}
-                            </p>
+                        <label for="email"></label>
+                        <!-- V_model collega l'input dell'email al dato email nei data Vue -->
+                        <input id="email" v-model="email" type="email" placeholder="Your email address">
+                        <p>
+                            {{ statusMail }}
+                        </p>
+                        <button type="submit">Subscribe</button>
+                        <p>
+                            {{ voidField }}
+                        </p>
                     </form>
                 </div>
-                <div class="footer-education col-lg-2">
+                <div class="footer-education col-lg-3">
                     <h3>
                         Education
                     </h3>
@@ -176,6 +187,7 @@
     
     ul {
         list-style-type: none;
+        padding: 0;
     }
 
     div.contacts nav ul li{
@@ -200,6 +212,10 @@
         display: inline-block;
         background: #ffffff;
         margin-right: 9px;
+    }
+
+    footer .footer-education {
+        padding-left: 5rem;
     }
 
     footer .footer-education li,
@@ -261,5 +277,12 @@
 
     .error {
         color: red;
+    }
+
+    .socials a{
+        margin-right: 1rem;
+        font-size: 2rem;
+        border: solid 1px;
+        padding: 0.1rem 1rem;
     }
 </style>
