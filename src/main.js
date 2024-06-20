@@ -10,9 +10,14 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
 import { faMap } from '@fortawesome/free-regular-svg-icons'
+import { faNoteSticky } from '@fortawesome/free-regular-svg-icons'
+import { faMessage } from '@fortawesome/free-regular-svg-icons/faMessage'
 
 /* add icons to the library */
 library.add(faMap)
+library.add(faMessage)
+library.add(faNoteSticky)
+
 
 createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)
