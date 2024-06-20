@@ -1,6 +1,7 @@
 import { reactive } from 'vue'
 
 export const store = reactive({
+
     players: [
         {
         name: "Adam Brown",
@@ -42,6 +43,7 @@ export const store = reactive({
         pic: "../src/assets/imgs/player6.jpg"
         },
     ],
+    
     upcomingMatches: [
         {
             id: 1,

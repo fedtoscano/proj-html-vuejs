@@ -30,11 +30,11 @@ return {
 <template>
     <main>
         <p> main </p>
-        <MainArticles/>
         <MainLeagueTables/>
         <MainNextMatch/>
         <MainPlayers/>
         <MainSponsors/>
+        <MainArticles/>
         <MainUpcomingMatches/>
     </main>
 
