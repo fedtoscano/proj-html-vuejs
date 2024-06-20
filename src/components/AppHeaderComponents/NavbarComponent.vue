@@ -14,16 +14,28 @@ return {
     <div class="nav-container">
         <div class="logobar">
             <div class="sponsor">
-                <img src="../../assets/imgs/sponsor1.png" alt="coca cola">
-                <img src="../../assets/imgs/sponsor2.png" alt="nike">
+                <a href="#">
+                    <img src="../../assets/imgs/sponsor1.png" alt="coca cola">
+                </a>
+                <a href="#">
+                    <img src="../../assets/imgs/sponsor2.png" alt="nike">
+                </a>
             </div>
             <div class="team-logo">
-                <img src="../../assets/imgs/favicon-football.png" alt="logo squadra">
+                <a href="#">
+                    <img src="../../assets/imgs/loader-football.png" alt="logo squadra">
+                </a>
             </div>
             <div class="socials">
-                <font-awesome-icon icon="fa-brands fa-facebook-f" />
-                <font-awesome-icon icon="fa-brands fa-instagram" />
-                <font-awesome-icon icon="fa-brands fa-twitter" />
+                <a href="#">
+                    <font-awesome-icon icon="fa-brands fa-facebook-f" />
+                </a>
+                <a href="#">
+                    <font-awesome-icon icon="fa-brands fa-instagram" />
+                </a>
+                <a href="#">
+                    <font-awesome-icon icon="fa-brands fa-twitter" />
+                </a>
             </div>
         </div>
         <nav >
@@ -43,15 +55,22 @@ return {
 .logobar{
     display: flex;
     justify-content: center;
-    max-width: 55%;
+    max-width: 47%;
     margin: 0 auto;
+    padding-bottom: 1rem;
     div{
         width: calc((100% / 3) - 3px);
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
     }
     .socials{
         color: white;
+        font-size: 2rem;
+        padding-top: 2rem;
+    }
+    .sponsor{
+        padding-top: 2rem;
+        height: fit-content;
     }
 }
 nav{
@@ -64,9 +83,14 @@ nav{
         list-style: none;
         text-transform: uppercase;
         font-weight: 900;
+        font-size: 18px;
 }
 a{
     text-decoration: none;
     color: white;
+    padding-bottom: 5px;
 }
+.link:hover{
+        border-bottom: 3px solid white;
+    }
 </style>

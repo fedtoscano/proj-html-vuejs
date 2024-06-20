@@ -16,14 +16,13 @@ return {
 </script>
 
 <template>
-
     <AppHeader/>
     <AppMain/>
     <AppFooter/>
-
 </template>
 
 <style lang="scss">
 @use './style/general.scss' as *;
 </style>
+
 
