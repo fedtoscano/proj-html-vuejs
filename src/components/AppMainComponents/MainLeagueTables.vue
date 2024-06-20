@@ -16,8 +16,7 @@ return {
 </script>
 
 <template>
-   <p>MainLeagueTables</p>
-
+  
 </template>
 
 <style>

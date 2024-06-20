@@ -14,8 +14,8 @@ return {
 </script>
 
 <template>
-    <div class="full-container">
 
+    <div class="full-container">
         <section class="title">
             <div class="img-container">
                 <img src="../../assets/imgs/thumb-up-icon.png" alt="">

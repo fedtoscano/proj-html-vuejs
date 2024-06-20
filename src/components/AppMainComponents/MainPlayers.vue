@@ -64,7 +64,6 @@ methods:{
 
         </div>
     </div>
-
 </template>
 
 <style scoped lang="scss">
@@ -132,6 +131,4 @@ methods:{
             }
         }
     }
-
-
 </style>

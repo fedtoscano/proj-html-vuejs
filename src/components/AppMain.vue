@@ -28,6 +28,7 @@ return {
 </script>
 
 <template>
+    
     <main>
         <p> main </p>
         <MainLeagueTables/>

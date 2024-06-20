@@ -1,13 +1,14 @@
-
-<script>
-import AppMain from './components/AppMain.vue'
-
-
+<script> 
+import AppMain from './components/AppMain.vue';
+import AppHeader from './components/AppHeader.vue';
+import AppFooter from './components/AppFooter.vue';
 export default {
-    components:{
-        AppMain
+components: {
+    AppHeader,
+    AppMain,
+    AppFooter
+},
 
-    },
 data() {
 return {  
 }
@@ -15,10 +16,13 @@ return {
 </script>
 
 <template>
-
-<AppMain/>
+    <AppHeader/>
+    <AppMain/>
+    <AppFooter/>
 </template>
 
 <style lang="scss">
-@use "./style/general.scss"
+@use './style/general.scss' as *;
 </style>
+
+

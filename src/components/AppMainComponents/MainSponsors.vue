@@ -15,7 +15,6 @@ return {
 </script>
 
 <template>
-
     <section id="bet777">
         <img src="../../assets/imgs/reklam.jpg" alt="">
     </section>
@@ -25,7 +24,6 @@ return {
             <img :src="sponsor.img" alt="" v-for="sponsor in store.sponsors" :key="sponsor.id">
         </div>
     </section>
-
 </template>
 
 <style scoped lang="scss">
