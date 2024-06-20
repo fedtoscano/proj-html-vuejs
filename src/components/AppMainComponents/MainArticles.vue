@@ -1,9 +1,13 @@
 
 <script>
 import { store } from '../../store.js';
+import { dragscroll } from 'vue-dragscroll'
 
 
 export default {
+    directives:{
+        dragscroll
+    },
 
 data() {
 return {  
@@ -26,7 +30,8 @@ return {
             </div>
         </section>
         
-        <section class="article-container">
+        <section class="article-container" v-dragscroll.x>
+
             <article v-for="(article, index) in store.blogArticles" :key="article.id">
         
                 <div class="article-info">
@@ -40,7 +45,9 @@ return {
                 </div>
 
                 <button>More</button>
+
             </article>
+            
         </section>
     </div>
 </template>
@@ -70,6 +77,7 @@ return {
 .article-container{
     display: flex;
     gap: 5rem;
+    overflow: hidden;
 
     article{
         padding: 1em;
