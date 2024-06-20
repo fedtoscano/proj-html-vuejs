@@ -48,13 +48,33 @@
                         link: '#',
                         active: false,
                     }
-                ]
+                ],
+                email: '',
+                // form non ancora inviato
+                statusMail: '',
+                voidField: ''
             }
         },
-        methods: {
-
+        methods:{
+            // Quando l'utente inserisce un'email nel campo e preme il pulsante "Subscribe", viene chiamata la funzione handleSubmit, che imposta formSent su true (formSent è quando utente compila il campo e preme invio)
+            handleSubmit() {
+            // ..non è valida perché il campo è vuoto
+            if (!this.email) {
+                this.statusMail='This field is required.';
+                this.voidField= 'One or more fields have an error.'
+            //  se il form è riempito e non è valida perché manca la @
+            } else if (this.email.includes('@')) {
+                this.statusMail= 'Good'
+            } else if (!(this.email.includes('@'))) {
+                this.statusMail= 'Invalid email format';
+                this.voidField= 'One or more fields have an error.'
+            // se l'email è vuota e manca la @
+            }},
+        },
+        created(){
+            this.handleSubmit()
+        }
     }
-}
 </script>
 
 <template>
@@ -97,17 +117,21 @@
                     <p>
                         Subscribe to be informed about important developments in our club and football world. 
                     </p>
-                    <div class="mb-3">
-                        <form action="">
-                            <label for="exampleFormControlInput1" class="form-label"></label>
-                            <input required type="email" class="email form-control form" id="exampleFormControlInput1" placeholder="Your Email Address">
-                        </form>
-                    </div>
-                        <form action="">
-                            <label for="exampleFormControlInput2" class="form-label"></label>
-                            <input type="submit" class="submit form-control form" id="exampleFormControlInput2" value="Subscribe"/>
-                        </form>
-                    </div>
+                    <!--  prevent impredisce di refreshare-->
+                    <!-- ascolta con v-on l'evento di submit del form -->
+                    <form @click.prevent="handleSubmit">
+                            <label for="email"></label>
+                            <!-- V_model collega l'input dell'email al dato email nei data Vue -->
+                            <input id="email" v-model="email" type="email" placeholder="Your email address">
+                            <p>
+                                {{ statusMail }}
+                            </p>
+                            <button type="submit">Subscribe</button>
+                            <p>
+                                {{ voidField }}
+                            </p>
+                    </form>
+                </div>
                 <div class="footer-education col-lg-2">
                     <h3>
                         Education
@@ -213,17 +237,18 @@
         font-size: 25px;
     }
 
+    button,
     input {
         width: 100%;
-    line-height: 70px;
-    display: inline-block;
-    background: #fff;
-    color: #062860;
-    border: 1px solid;
-    padding: 0 50px;
-    position: relative;
-    font-size: 17px;
-    border-radius: 3rem;
+        line-height: 70px;
+        display: inline-block;
+        background: #fff;
+        color: #062860;
+        border: 1px solid;
+        padding: 0 50px;
+        position: relative;
+        font-size: 17px;
+        border-radius: 3rem;
     }
 
     .logo{
@@ -232,5 +257,9 @@
 
     h3{
         font-weight: bold ;
+    }
+
+    .error {
+        color: red;
     }
 </style>
