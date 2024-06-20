@@ -22,14 +22,7 @@ return {
 
                 <p>{{ store.teams[0].name }}</p>
                 <img :src="store.teams[0].logo" alt="">
-
-            </div>
-
-            <p class="vs">vs</p>
-
-            <div class="match">
-
-                
+                <p class="vs">vs</p>
                 <img :src="store.teams[1].logo" alt="">
                 <p>{{ store.teams[1].name }}</p>
 
@@ -40,6 +33,7 @@ return {
             <font-awesome-icon icon="fa-regular fa-calendar" />
             <p>May 21, 2022 18:05pm</p>
 
+            <span><p>+</p></span>
             <p>Expert Stadium</p>
         </div>
 
@@ -54,7 +48,6 @@ return {
 <style lang="scss" scoped>
 article{
     margin: 0 auto;
-    border: 1px solid black;
     display: flex;
     flex-direction: column;
     padding: 2rem;
@@ -92,6 +85,25 @@ article{
         p{
             margin-right: 1rem;
             font-weight: bold;
+        }
+
+        span{
+            border: 1px solid black;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: .5rem;
+            p{
+                margin-right: 1px;
+                font-size: .7rem;
+            }
+        }
+
+        .fa-calendar{
+            margin-right: .5rem;
         }
     }
 
