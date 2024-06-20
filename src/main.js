@@ -2,6 +2,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
+
 /* import the fontawesome core */
 import { library } from '@fortawesome/fontawesome-svg-core'
 
@@ -28,3 +29,4 @@ library.add(faArrowRight, faCaretLeft, faCaretRight, faFacebookF, faInstagram, f
 createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)
     .mount('#app')
+
