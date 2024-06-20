@@ -62,7 +62,6 @@ return {
         img{
             width: 100px;
         }
-    
 }
 
 .article-container{
