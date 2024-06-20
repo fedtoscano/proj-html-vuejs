@@ -1,3 +1,4 @@
+
 <script> 
 import NavbarComponent from './AppHeaderComponents/NavbarComponent.vue';
 import CarouselComponent from './AppHeaderComponents/CarouselComponent.vue';

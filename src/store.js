@@ -1,6 +1,8 @@
+
 import { reactive } from 'vue'
 
 export const store = reactive({
+
      navLinks: [
         'home',
         'fixtures & results',
@@ -32,6 +34,7 @@ export const store = reactive({
             image: '../src/assets/imgs/slider4.jpg',
         },
     ],                         
+
     players: [
         {
         name: "Adam Brown",
@@ -60,7 +63,20 @@ export const store = reactive({
         role: "Forwarder",
         pic: "../src/assets/imgs/player4.jpg"
         },
+        {
+        name: "James Johnson",
+        number: "21",
+        role: "Defender",
+        pic: "../src/assets/imgs/player5.jpg"
+        },
+        {
+        name: "Charlie Roy",
+        number: "02",
+        role: "Goalkeeper",
+        pic: "../src/assets/imgs/player6.jpg"
+        },
     ],
+    
     upcomingMatches: [
         {
             id: 1,
@@ -192,6 +208,33 @@ export const store = reactive({
             logo: "../src/assets/imgs/league-club-9.png"
         },
     ],
+    
+    sponsors:[
+        {
+            id:1,
+            img: "../src/assets/imgs/client2.png",
+        },
+        {
+            id:2,
+            img: "../src/assets/imgs/client3.png",
+        },
+        {
+            id:3,
+            img: "../src/assets/imgs/client4.png",
+        },
+        {
+            id:4,
+            img: "../src/assets/imgs/client7.png",
+        },
+        {
+            id:5,
+            img: "../src/assets/imgs/client9.png",
+        },
+        {
+            id:16,
+            img: "../src/assets/imgs/client10.png",
+        },
+    ],
 
     blogArticles: [
         {
@@ -235,5 +278,4 @@ export const store = reactive({
             img: "../src/assets/imgs/news6-1.png",
         },
     ]
-
 })
