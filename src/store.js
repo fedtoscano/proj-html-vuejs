@@ -1,3 +1,4 @@
+
 import { reactive } from 'vue'
 
 export const store = reactive({
@@ -235,5 +236,6 @@ export const store = reactive({
             img: "../src/assets/imgs/news6-1.png",
         },
     ]
+
 
 })
