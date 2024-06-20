@@ -35,51 +35,68 @@ created() {
 </script>
 
 <template>
-    <ul>
-        <li v-for="(data, index) in tournamentData" :key="index">
-            <div class="poster">
-                <img :src="data.image" alt="championship-image">
-            </div>
-            <div class="content">
-                <h3>{{ data.event_name }}</h3>
-                <h4>{{ data.type }}</h4>
-                <div class="date">
-                    <p>start: {{ data.start_date }}</p>
-                    <p>start: {{ data.end_date }}</p>
+    <div class="contaier-tournament">
+        <h1>tournaments</h1>
+        <ul>
+            <li v-for="(data, index) in tournamentData" :key="index">
+                <div class="poster">
+                    <img :src="data.image" alt="championship-image">
                 </div>
-            </div>
-        </li>
-    </ul>
+                <div class="content">
+                    <h3>{{ data.event_name }}</h3>
+                    <h4>{{ data.type }}</h4>
+                    <div class="date">
+                        <p>start: {{ data.start_date }}</p>
+                        <p>end: {{ data.end_date }}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
 </template>
 
 <style lang="scss" scoped>
+.contaier-tournament{
+    background-image: url(../../assets/imgs/slider2-1.jpg);
+    background-color: #000000;
+    color: #ffffff;
+    padding: 3rem;
+    h1{
+        padding-bottom: 3rem;
+        text-align: center;
+    }
+}
 ul{
     display: flex;
     justify-content: space-around;
     align-items: center;
     list-style: none;
-    background-color: #000000;
-    background-image: url(../../assets/imgs/slider2-1.jpg);
-    color: #ffffff;
-    padding: 3rem;
     overflow: auto;
-    li{
-        width: calc((100% / 3) - 10px);
-        background-color: rgba($color: #000000, $alpha: .5);
-        margin-bottom: 2rem;
-        border: none;
-        border-radius: 1.5rem;
-        overflow: auto;
-        .poster{
+    flex-wrap: wrap;
+}
+li{
+    width: calc((100% / 5) - 20px);
+    background-color: rgba($color: #000000, $alpha: .5);
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    height: 375px;
+    transition: width 1s, height 1s;
+    .poster{
+        width: 100%;
+        img{
             width: 100%;
-            img{
-                width: 100%;
-            }
+            height: 178px;
         }
-        .content{
-            padding: 1rem;
-            font-weight: 800;
-        }
+    }
+    .content{
+        padding: 1rem;
+        font-weight: 800;
+    }
+    &:hover{
+        width: 22%;
+        cursor: pointer;
     }
 }
 </style>
