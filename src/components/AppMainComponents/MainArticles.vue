@@ -38,6 +38,8 @@ return {
                 <div class="article-text">
                     <p>{{ article.text }}</p>
                 </div>
+
+                <button>More</button>
             </article>
         </section>
     </div>
@@ -45,7 +47,7 @@ return {
 
 <style scoped lang="scss">
 .full-container{
-    padding: 2rem;
+    padding: 4rem;
     background-color: rgb(250, 250, 250);
 }
 .title{
@@ -53,6 +55,7 @@ return {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin-bottom: 5rem;
 }
 .img-container{
     padding: 1rem;
@@ -66,25 +69,39 @@ return {
 
 .article-container{
     display: flex;
-    // white-space: ;
-    gap: 2rem;
+    gap: 5rem;
 
     article{
         padding: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
         flex: 0 0 auto;
         overflow-x: hidden;
         white-space: none;
-        width: calc(100% / 4);
+        width: calc((100% / 4) - 5rem);
         background-color: white;
         border-radius: 3rem;
 
+
+        button{
+        padding: 1.5rem 2.7rem;
+        font-size: 1rem;
+        font-weight: bold;
+        color: white;
+        margin-top: 1em;
+        background-color: black;
+        align-self: center;
+        border-radius: 70px;
+        border: 1px solid white;
+    }
         article.info{
         margin-bottom: 2em;
         width: 100%;
 
     }
     img{
-
+        padding: 1rem;
         width: 100%;
     }
     }
