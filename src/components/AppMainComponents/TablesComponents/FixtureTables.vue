@@ -254,6 +254,8 @@ article{
         font-weight: bold;
         color: black;
         font-size: 2.5rem;
+        margin: 3rem 0;
+        text-align: center;
 
     }
 
@@ -303,7 +305,11 @@ article{
     
         p{
             align-self: center;
+
             font-size: 1.2rem;
+
+            
+
         }
         
         .vs{
