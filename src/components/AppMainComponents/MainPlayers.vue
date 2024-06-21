@@ -1,8 +1,12 @@
 <script>
 import { store } from '../../store.js';
+import { dragscroll } from 'vue-dragscroll'
 
 
 export default {
+    directives:{
+        dragscroll
+    },
     components:{
     
         
@@ -21,7 +25,6 @@ return {
 methods:{
     // startDrag(event){
     //     this.isDown = true;
-
     //     this.startX = event.pageX - this.$refs.items.offsetLeft;        
     //     this.scrollLeft = this.$refs.items.scrollLeft
     //     console.log(this.startX)
@@ -46,11 +49,13 @@ methods:{
         <div class="players-container">
             <h2>Players</h2>
 
-            <div class="players-carousel">
+            <div class="players-carousel" v-dragscroll>
 
                 <article v-for="(player, index) in store.players" :key="index">
                     <div class="image-container">
-                        <img :src="player.pic" :alt="`${player.name} official photo`">
+                        <a href="">
+                            <img :src="player.pic" :alt="`${player.name} official photo`">
+                        </a>
 
                         <div class="info-container">
                             <p>{{player.number}}</p>
@@ -61,7 +66,8 @@ methods:{
                 </article>
 
             </div>
-
+            
+            <button><a href="#">View All Players</a></button>
         </div>
     </div>
 </template>
@@ -71,9 +77,9 @@ methods:{
 
 .container{
     background-image: url(../../assets/imgs/player.jpg);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 764px;
+    
 
     .players-container{
         max-width: 1600px;
@@ -89,14 +95,33 @@ methods:{
                 margin-bottom: 3rem;
             }
 
+            button{
+                padding: 1.5rem 2.7rem;
+                font-size: 1rem;
+                font-weight: bold;
+                color: white;
+                background-color: black;
+                align-self: center;
+                border-radius: 70px;
+                border: 1px solid white;
+                a{
+                    text-decoration: none;
+                    color: white;
+                }
+            }
         .players-carousel{
             display: flex;
             overflow-x: auto;
             gap: 2rem;
             align-items: center;
+            margin-bottom: 2em;
+            &::-webkit-scrollbar{
+                width: 0;
+            }
         }
 
             article{
+                user-select: none;
                 flex: 0 0 auto;
                 width: calc((100% / 4) - 2rem);
                 overflow: hidden;
