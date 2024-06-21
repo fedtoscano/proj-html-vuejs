@@ -76,6 +76,10 @@ data() {
             width: 680px;
             font-size: 20px;
 
+            td{
+                padding: 1rem 2rem;
+            }
+
             thead tr th:first-child{
                 text-align: start;
                 padding-left: 1rem;
@@ -94,7 +98,7 @@ data() {
             tbody tr td.lg-col {
                 padding-left: 1rem;
                 text-align: justify;
-                width: 75%;
+                width: 100%;
                 vertical-align: middle;
                 display: flex;
                 align-items: center;
@@ -102,6 +106,7 @@ data() {
 
             tbody tr td img.team-logo{
                 width: 60px;
+                margin: 0 1rem;
             }
 
             tbody tr td.sm-col{
