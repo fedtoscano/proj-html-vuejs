@@ -53,7 +53,7 @@ return {
             top: 50%;
     }
     100%{
-        top: 150%;
+        top: 100%;
     }
 }
 </style>
