@@ -65,6 +65,8 @@ data() {
             font-weight: bold;
             color: black;
             text-align: center;
+            font-size: 2.5rem;
+            margin: 3rem 0;
         }
 
         table {

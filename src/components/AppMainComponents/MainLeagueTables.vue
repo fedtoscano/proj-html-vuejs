@@ -17,9 +17,20 @@ return {
 </script>
 
 <template>
-    <LeagueTable/>
-    <FixtureTables/>
+    <article>
+        <LeagueTable/>
+        <FixtureTables/>
+    </article>
+    
 </template>
 
 <style>
+
+article{
+    display: flex;
+    max-width: 75%;
+    margin: 0 auto;
+    justify-content: space-between;
+
+}
 </style>
