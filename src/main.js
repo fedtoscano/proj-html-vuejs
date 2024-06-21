@@ -22,9 +22,10 @@ import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons"
 
 /* add icons to the library */
-library.add(faArrowRight, faCaretLeft, faCaretRight, faFacebookF, faInstagram, faTwitter, faMap, faMessage, faNoteSticky, faCalendar,faLocationDot)
+library.add(faArrowRight, faCaretLeft, faCaretRight, faFacebookF, faInstagram, faTwitter, faMap, faMessage, faNoteSticky, faCalendar,faLocationDot, faChevronUp)
 
 
 createApp(App)
