@@ -45,13 +45,8 @@ methods: {
     circlePointer.style.top = e.pageY + 'px';
     })
     }
-
-        });
     },
-    },
-
-}
-}
+    }
 </script>
 
 
