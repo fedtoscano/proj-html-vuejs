@@ -151,7 +151,19 @@ methods:{
                     }
                 }
                 }
-
+                &:hover{
+                    .image-container{
+                        img{
+                            transition: transform 1s;
+                            transform: scale(1.1);
+                            overflow: hidden;
+                        }
+                        .info-container{
+                            bottom: -3%;
+                            transition: bottom 1s;
+                        }
+                    }
+                }
 
             }
         }
