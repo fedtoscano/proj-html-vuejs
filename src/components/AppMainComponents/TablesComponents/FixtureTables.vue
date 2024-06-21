@@ -303,7 +303,7 @@ article{
     
         p{
             align-self: center;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
         }
         
         .vs{
