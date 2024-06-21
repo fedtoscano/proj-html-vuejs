@@ -94,6 +94,9 @@ data() {
                 padding-left: 1rem;
                 text-align: justify;
                 width: 60%;
+                vertical-align: middle;
+                display: flex;
+                align-items: center;
             }
 
             tbody tr td img.team-logo{
@@ -108,7 +111,7 @@ data() {
         button {
         width: 680px;
         background-color: #212121;
-        padding: 1rem 2rem;
+        padding: 1.5rem;
         color: white;
 
             a{
