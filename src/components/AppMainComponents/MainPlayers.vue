@@ -53,7 +53,7 @@ methods:{
 
                 <article v-for="(player, index) in store.players" :key="index">
                     <div class="image-container">
-                        <a href="#">
+                        <a href="">
                             <img :src="player.pic" :alt="`${player.name} official photo`">
                         </a>
 
