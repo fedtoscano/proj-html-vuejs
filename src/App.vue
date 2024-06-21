@@ -2,16 +2,19 @@
 import AppMain from './components/AppMain.vue';
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
+import AppLoader from './components/AppLoader.vue';
+
 
 export default {
 components: {
         AppHeader,
         AppMain,
-        AppFooter
+        AppFooter,
+        AppLoader
         },
         data() {
         return {
-            showButton: false
+            showButton: false,
         }
     } ,
     mounted() {
@@ -31,6 +34,7 @@ methods: {
         window.scrollTo({
         top: 0,
         behavior: 'smooth'
+
     });
     },
 
@@ -41,6 +45,11 @@ methods: {
     circlePointer.style.top = e.pageY + 'px';
     })
     }
+
+        });
+    },
+    },
+
 }
 }
 </script>
@@ -51,12 +60,13 @@ methods: {
         <AppMain />
         <AppFooter />        
         <button class="go-up-btn" v-show="showButton" @click="scrollToTop">
-            <font-awesome-icon :icon="['fas', 'chevron-up']" />
+            <font-awesome-icon :icon="['fas', 'chevron-up']"/>
         </button>
 
     <div class="circle-pointer">
         <div class="little-dot"></div>
     </div>
+    <AppLoader/>
 </template>
 
 <style lang="scss">

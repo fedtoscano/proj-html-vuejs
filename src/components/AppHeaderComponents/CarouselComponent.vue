@@ -57,8 +57,8 @@ created() {
                     </h3>
                     <button class="btn-learn">learn more <font-awesome-icon icon="fa-solid fa-arrow-right" /></button>
                 </div>  
-                <span @click="previous" id="previous"><font-awesome-icon icon="fa-solid fa-caret-left" /></span>
-                <span @click="next" id="next"><font-awesome-icon icon="fa-solid fa-caret-right"/></span>
+                <font-awesome-icon icon="fa-solid fa-caret-left"  @click="previous" id="previous" />
+                <font-awesome-icon icon="fa-solid fa-caret-right" @click="next" id="next"/>
                 </div>
             </div>
     </div>
@@ -67,12 +67,13 @@ created() {
 <style lang="scss" scoped>
 .item{
     position: relative;
+    text-transform: capitalize;
     .image-container{
         width: 100vw;
     }
     .text{
         position: absolute;
-        top: 50%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
         color: white;
@@ -91,33 +92,43 @@ created() {
         .btn-learn{
             background-color: transparent;
             color: white;
-            border: 1px solid white;
-            padding: 1rem 2.5rem;
+            border: 3px solid white;
+            padding: 1.7rem 3.5rem;
             border-radius: 30px;
             font-weight: 900;
+            text-transform: capitalize;
+                &:hover{
+                    cursor: pointer;
+                }
         }
     }
     #previous{
         position: absolute;
-        top: 50%;
-        left: 5%;
+        top: 60%;
+        left: 4%;
         transform: translate(-50%, -50%);
         color: white;
         font-size: 2rem;
-        border: 1px solid white;
+        border: 2px solid white;
         padding: 1rem 1.5rem;
         border-radius: 50%;
+            &:hover{
+                cursor: pointer;
+            }
     }
     #next{
         position: absolute;
-        top: 50%;
-        right: 5%;
+        top: 60%;
+        right: 0%;
         transform: translate(-50%, -50%);
         color: white;
         font-size: 2rem;
-        border: 1px solid white;
+        border: 2px solid white;
         padding: 1rem 1.5rem;
         border-radius: 50%;
+            &:hover{
+                cursor: pointer;
+            }
     }
 }
 img{
