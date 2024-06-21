@@ -191,6 +191,7 @@
         background-size: cover;
         color: white;
         padding: 2rem 3rem;
+        
 
             .footer-rights{
                 @include flex-justify();

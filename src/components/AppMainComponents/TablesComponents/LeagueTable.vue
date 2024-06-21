@@ -67,6 +67,7 @@ data() {
             text-align: center;
             font-size: 2.5rem;
             margin: 3rem 0;
+            text-align: center;
         }
 
         table {
@@ -117,6 +118,8 @@ data() {
             a{
                 text-decoration: none;
                 color: white;
+                font-size: 1.2rem;
+                text-transform: capitalize;
             }
         }
 </style>
