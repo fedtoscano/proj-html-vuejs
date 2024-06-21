@@ -28,9 +28,6 @@ return {
 
 article{
     display: flex;
-    max-width: 75%;
-    margin: 0 auto;
     justify-content: space-between;
-
 }
 </style>

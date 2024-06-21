@@ -59,7 +59,7 @@ data() {
 
     div.table-league{
         margin-left: 2rem;
-        width: 680px;
+        width: calc((100% / 2) - 20px);
     }
         h1{
             font-weight: bold;
@@ -73,7 +73,6 @@ data() {
         table {
             background-color: #f5f5f5;
             text-align: center;
-            width: 680px;
             font-size: 20px;
 
             td{
@@ -115,7 +114,7 @@ data() {
         }
 
         button {
-        width: 680px;
+        width: 100%;
         background-color: #212121;
         padding: 1.5rem;
         color: white;
