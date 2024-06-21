@@ -36,7 +36,6 @@ methods: {
 
 
 <template>
-    <div id="app">
         <AppHeader />
         <AppMain />
         <AppFooter />
@@ -44,7 +43,6 @@ methods: {
         <button class="go-up-btn" v-show="showButton" @click="scrollToTop">
             <font-awesome-icon :icon="['fas', 'chevron-up']" />
         </button>
-    </div>
 </template>
 
 <style lang="scss">
