@@ -50,19 +50,17 @@
                     }
                 ],
                 email: '',
-                // form non ancora inviato
                 statusMail: '',
                 voidField: ''
             }
         },
         methods:{
-            // Quando l'utente inserisce un'email nel campo e preme il pulsante "Subscribe", viene chiamata la funzione handleSubmit, che imposta formSent su true (formSent è quando utente compila il campo e preme invio)
             handleSubmit() {
-            // ..non è valida perché il campo è vuoto
+            // Non è valida perché il campo è vuoto
             if (!this.email) {
                 this.statusMail='This field is required.';
                 this.voidField= 'One or more fields have an error.'
-            //  se il form è riempito e non è valida perché manca la @
+            // Non è valida perché manca la @
             } else if (this.email.includes('@')) {
                 this.statusMail= 'Good'
             } else if (!(this.email.includes('@'))) {
@@ -79,98 +77,96 @@
 
 <template>
     <footer>
-        <div class="container">
-            <div class="row d-flex">
-                <div class="contacts-list col-lg-3">
-                    <div class="logo">
-                        <img src="../assets/imgs/logo-footer-football.png" alt="Logo">
-                    </div>
-                    <div class="contacts">
-                        <nav>
-                            <ul>
-                                <li>
-                                    <font-awesome-icon class="icon" icon="fa-regular fa-map" />
-                                    <p>
-                                        New Jersey, USA
-                                    </p>
-                                </li>
-                                <li>
-                                    <font-awesome-icon class="icon" icon="fa-regular fa-note-sticky" />
-                                    <p>
-                                        +1 (234) 5678910
-                                    </p>
-                                </li>
-                                <li>
-                                    <font-awesome-icon class="icon" icon="fa-regular fa-message" />
-                                    <p>
-                                        example@example.come
-                                    </p>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div class="socials">
-                            <a href="#">
-                                <font-awesome-icon icon="fa-brands fa-facebook-f" />
-                            </a>
-                            <a href="#">
-                                <font-awesome-icon icon="fa-brands fa-instagram" />
-                            </a>
-                            <a href="#">
-                                <font-awesome-icon icon="fa-brands fa-twitter" />
-                            </a>
-                        </div>
+        <div class="d-flex">
+            <div class="contatti">
+                <div class="logo">
+                    <img src="../assets/imgs/logo-footer-football.png" alt="Logo">
+                </div>
+                <div class="contacts">
+                    <nav>
+                        <ul>
+                            <li>
+                                <font-awesome-icon class="icon" icon="fa-regular fa-map" />
+                                <p>
+                                    New Jersey, USA
+                                </p>
+                            </li>
+                            <li>
+                                <font-awesome-icon class="icon" icon="fa-regular fa-note-sticky" />
+                                <p>
+                                    +1 (234) 5678910
+                                </p>
+                            </li>
+                            <li>
+                                <font-awesome-icon class="icon" icon="fa-regular fa-message" />
+                                <p>
+                                    example@example.come
+                                </p>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="socials">
+                        <a href="#">
+                            <font-awesome-icon icon="fa-brands fa-facebook-f" />
+                        </a>
+                        <a href="#">
+                            <font-awesome-icon icon="fa-brands fa-instagram" />
+                        </a>
+                        <a href="#">
+                            <font-awesome-icon icon="fa-brands fa-twitter" />
+                        </a>
                     </div>
                 </div>
-                <div class="footer-newsletter col-lg-4">
-                    <h3>
-                        Join our newsletter
-                    </h3>
+            </div>
+            <div class="footer-newsletter">
+                <h3>
+                    Join our newsletter
+                </h3>
+                <p>
+                    Subscribe to be informed about important developments in our club and football world. 
+                </p>
+                <!--  prevent impredisce di refreshare-->
+                <!-- ascolta con v-on l'evento di submit del form -->
+                <form @click.prevent="handleSubmit">
+                    <label for="email"></label>
+                    <!-- V_model collega l'input dell'email al dato email nei data Vue -->
+                    <input id="email" v-model="email" type="email" placeholder="Your email address">
                     <p>
-                        Subscribe to be informed about important developments in our club and football world. 
+                        {{ statusMail }}
                     </p>
-                    <!--  prevent impredisce di refreshare-->
-                    <!-- ascolta con v-on l'evento di submit del form -->
-                    <form @click.prevent="handleSubmit">
-                        <label for="email"></label>
-                        <!-- V_model collega l'input dell'email al dato email nei data Vue -->
-                        <input id="email" v-model="email" type="email" placeholder="Your email address">
-                        <p>
-                            {{ statusMail }}
-                        </p>
-                        <button type="submit">Subscribe</button>
-                        <p>
-                            {{ voidField }}
-                        </p>
-                    </form>
-                </div>
-                <div class="footer-education col-lg-3">
-                    <h3>
-                        Education
-                    </h3>
-                    <nav>
-                        <ul>
-                            <li v-for="(element,index) in navbarFooterEdu" :key="index">
-                                <a href="">
-                                    {{ element.name }}
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="footer-quick-links col-lg-2">
-                    <h3>
-                        Quick Links
-                    </h3>
-                    <nav>
-                        <ul>
-                            <li v-for="(element,index) in navbarFooterQuickLinks" :key="index">
-                                <a href="">
-                                    {{ element.name }}
-                                </a>                        
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+                    <button type="submit">Subscribe</button>
+                    <p>
+                        {{ voidField }}
+                    </p>
+                </form>
+            </div>
+            <div class="footer-education">
+                <h3>
+                    Education
+                </h3>
+                <nav>
+                    <ul>
+                        <li v-for="(element,index) in navbarFooterEdu" :key="index">
+                            <a href="">
+                                {{ element.name }}
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-quick-links">
+                <h3>
+                    Quick Links
+                </h3>
+                <nav>
+                    <ul>
+                        <li v-for="(element,index) in navbarFooterQuickLinks" :key="index">
+                            <a href="">
+                                {{ element.name }}
+                            </a>                        
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
         <div class="footer-rights d-flex justify-content-center">
@@ -189,6 +185,21 @@
         list-style-type: none;
         padding: 0;
     }
+
+    .contatti,
+    .footer-education {
+        width: 20%;
+    }
+
+    .footer-newsletter {
+        width: 40%;
+        padding: 0 8rem 0 1rem;
+    }
+
+    .footer-quick-links{
+        width: 20%;
+    }
+
 
     div.contacts nav ul li{
         display: flex;
@@ -214,8 +225,10 @@
         margin-right: 9px;
     }
 
-    footer .footer-education {
-        padding-left: 5rem;
+    .footer-education {
+        display: flex;
+        flex-direction: column;
+        margin-left: 3rem;
     }
 
     footer .footer-education li,
@@ -246,11 +259,12 @@
     }
 
     img{
-        width: 15%;
+        width: 20%;
     }
 
     .icon{
-        font-size: 25px;
+        font-size: 30px;
+        margin-right: 1rem;
     }
 
     button,
@@ -284,5 +298,9 @@
         font-size: 2rem;
         border: solid 1px;
         padding: 0.1rem 1rem;
+    }
+
+    .footer-rights{
+        margin-top: 3rem;
     }
 </style>
