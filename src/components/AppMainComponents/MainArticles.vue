@@ -29,6 +29,7 @@ methods: {
 <template>
 
     <div class="full-container">
+
         <section class="title">
             <div class="img-container">
                 <img src="../../assets/imgs/thumb-up-icon.png" alt="">
@@ -74,6 +75,7 @@ methods: {
 .full-container{
     padding: 4rem;
     background-color: rgb(250, 250, 250);
+
 }
 .title{
     display: flex;
