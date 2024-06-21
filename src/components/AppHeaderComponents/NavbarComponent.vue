@@ -42,6 +42,7 @@ return {
             <ul class="navbar">
                 <li v-for="(link, index) in store.navLinks" :key="index">
                     <a href="#" class="link">{{ link }}</a>
+                    <div class="bold-line"></div>
                 </li>
             </ul>
         </nav>
@@ -90,7 +91,16 @@ a{
     color: white;
     padding-bottom: 5px;
 }
-.link:hover{
-        border-bottom: 3px solid white;
+.bold-line{
+    width: 0%;
+    height: 3px;
+    background-color: white;
+    transition: all 2s;
+}
+li:hover{
+    .bold-line{
+        width: 100%;
     }
+}
+
 </style>
