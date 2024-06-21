@@ -15,7 +15,6 @@ components: {
         data() {
         return {
             showButton: false,
-            loader: false,
         }
     } ,
     mounted() {
@@ -34,21 +33,13 @@ methods: {
         behavior: 'smooth'
         });
     },
-    getLoad() {
-        setTimeout(() => {
-            this.loader = true;
-        }, 1300);
-    }
     },
-    created() {
-        this.getLoad();
-    }
 }
 </script>
 
 
 <template>
-    <div v-if="loader === true">
+    <div>
         <AppHeader />
         <AppMain />
         <AppFooter />
@@ -57,7 +48,7 @@ methods: {
             <font-awesome-icon :icon="['fas', 'chevron-up']"/>
         </button>
     </div>
-    <AppLoader v-else/>
+    <AppLoader/>
 </template>
 
 <style lang="scss">
