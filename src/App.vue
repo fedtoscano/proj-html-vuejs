@@ -2,16 +2,19 @@
 import AppMain from './components/AppMain.vue';
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
+import AppLoader from './components/AppLoader.vue';
+
 
 export default {
 components: {
         AppHeader,
         AppMain,
-        AppFooter
+        AppFooter,
+        AppLoader
         },
         data() {
         return {
-            showButton: false
+            showButton: false,
         }
     } ,
     mounted() {
@@ -28,15 +31,15 @@ methods: {
         window.scrollTo({
         top: 0,
         behavior: 'smooth'
-    });
-    }
-    }
+        });
+    },
+    },
 }
 </script>
 
 
 <template>
-    <div id="app">
+    <div>
         <AppHeader />
         <AppMain />
         <AppFooter />
@@ -45,6 +48,7 @@ methods: {
             <font-awesome-icon :icon="['fas', 'chevron-up']"/>
         </button>
     </div>
+    <AppLoader/>
 </template>
 
 <style lang="scss">
