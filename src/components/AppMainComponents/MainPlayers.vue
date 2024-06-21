@@ -46,10 +46,10 @@ methods:{
 
 <template>
     <div class="container">
-        <div class="players-container"v-dragscroll.x>
+        <div class="players-container">
             <h2>Players</h2>
 
-            <div class="players-carousel">
+            <div class="players-carousel" v-dragscroll>
 
                 <article v-for="(player, index) in store.players" :key="index">
                     <div class="image-container">
@@ -121,6 +121,7 @@ methods:{
         }
 
             article{
+                user-select: none;
                 flex: 0 0 auto;
                 width: calc((100% / 4) - 2rem);
                 overflow: hidden;

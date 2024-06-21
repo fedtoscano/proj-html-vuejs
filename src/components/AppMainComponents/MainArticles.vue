@@ -1,5 +1,6 @@
 
 <script>
+import { width } from '@fortawesome/free-brands-svg-icons/fa42Group';
 import { store } from '../../store.js';
 import { dragscroll } from 'vue-dragscroll'
 
@@ -11,10 +12,18 @@ export default {
 
 data() {
 return {  
-    store
+    store,
+    buttonSelected: 1,
 
 }
-}}
+},
+methods: {   
+        selectButton(index) {
+            this.buttonSelected = index;
+        }
+    }
+    
+}
 </script>
 
 <template>
@@ -30,7 +39,7 @@ return {
             </div>
         </section>
         
-        <section class="article-container" v-dragscroll.x>
+        <section class="article-container" v-dragscroll>
 
             <article v-for="(article, index) in store.blogArticles" :key="article.id">
         
@@ -49,6 +58,15 @@ return {
             </article>
             
         </section>
+
+        <div class="select-buttons-container">
+            <button v-for="(button, index) in [1,2,3,4]" 
+                        :key="index" 
+                        class="select-button" 
+                        :class="{'button-clicked' : buttonSelected===index}" 
+                        @click="selectButton(index)">
+            </button>
+        </div>
     </div>
 </template>
 
@@ -78,8 +96,10 @@ return {
     display: flex;
     gap: 5rem;
     overflow: hidden;
+    margin-bottom: 3rem;
 
     article{
+        user-select: none;
         padding: 1em;
         display: flex;
         flex-direction: column;
@@ -90,7 +110,6 @@ return {
         width: calc((100% / 4) - 5rem);
         background-color: white;
         border-radius: 3rem;
-
 
         button{
         padding: 1.5rem 2.7rem;
@@ -117,5 +136,25 @@ return {
         width: 100%;
     }
     }
+}
+
+.select-buttons-container{
+display: flex;
+justify-content: center;
+width: fit-content;
+
+.select-button{
+    height: 15px;
+    width: 150px;
+    background-color: aquamarine;
+    border: 1px solid magenta;
+    &:hover{
+        background-color: red;
+    }
+
+    &.button-clicked{
+        width: 70%;
+    }
+}
 }
 </style>
