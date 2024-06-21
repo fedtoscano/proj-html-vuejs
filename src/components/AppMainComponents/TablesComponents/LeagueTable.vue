@@ -54,62 +54,64 @@ data() {
 </template>
 
 <style lang="scss" scoped>
-@use '../node_modules/bootstrap/scss/bootstrap.scss';
+    @use '../../../style/general.scss';
+    @use '../../../style/partials/mixins' as *;
 
-div.table-league{
-    margin-left: 2rem;
-    width: 680px;
-}
-    h1{
-        font-weight: bold;
-        color: black;
-        text-align: center;
-    }
-
-    table {
-        background-color: #f5f5f5;
-        text-align: center;
+    div.table-league{
+        margin-left: 2rem;
         width: 680px;
-        font-size: 20px;
-
-        thead tr th:first-child{
-            text-align: start;
-            padding-left: 1rem;
-            width: 40%;
-        }
-
-        thead{
-            color: white;
-            background-color: #212121;
-        }
-
-        tbody tr td:last-child{
+    }
+        h1{
             font-weight: bold;
+            color: black;
+            text-align: center;
         }
 
-        tbody tr td.lg-col {
-            padding-left: 1rem;
-            text-align: justify;
-            width: 60%;
+        table {
+            background-color: #f5f5f5;
+            text-align: center;
+            width: 680px;
+            font-size: 20px;
+
+            thead tr th:first-child{
+                text-align: start;
+                padding-left: 1rem;
+                width: 40%;
+            }
+
+            thead{
+                color: white;
+                background-color: #212121;
+            }
+
+            tbody tr td:last-child{
+                font-weight: bold;
+            }
+
+            tbody tr td.lg-col {
+                padding-left: 1rem;
+                text-align: justify;
+                width: 60%;
+            }
+
+            tbody tr td img.team-logo{
+                width: 60px;
+            }
+
+            tbody tr td.sm-col{
+                width: 10%;
+            }
         }
 
-        tbody tr td img.team-logo{
-            width: 60px;
-        }
+        button {
+        width: 680px;
+        background-color: #212121;
+        padding: 1rem 2rem;
+        color: white;
 
-        tbody tr td.sm-col{
-            width: 10%;
+            a{
+                text-decoration: none;
+                color: white;
+            }
         }
-    }
-
-    button {
-    width: 680px;
-    background-color: #212121;
-    padding: 1rem 2rem;
-    color: white;
-
-        a{
-            text-decoration: none;
-        }
-    }
 </style>

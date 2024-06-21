@@ -51,27 +51,30 @@
                 ],
                 email: '',
                 statusMail: '',
-                voidField: ''
+                voidField: '',
             }
         },
         methods:{
             handleSubmit() {
-            // Non è valida perché il campo è vuoto
-            if (!this.email) {
-                this.statusMail='This field is required.';
-                this.voidField= 'One or more fields have an error.'
-            // Non è valida perché manca la @
-            } else if (this.email.includes('@')) {
-                this.statusMail= 'Good'
-            } else if (!(this.email.includes('@'))) {
-                this.statusMail= 'Invalid email format';
-                this.voidField= 'One or more fields have an error.'
-            // se l'email è vuota e manca la @
-            }},
+                // Non è valida perché il campo è vuoto
+                if (!this.email) {
+                    this.statusMail='This field is required.';
+                    this.voidField= 'One or more fields have an error.';
+                // E' valida perché include la @
+                } else if (this.email.includes('@')) {
+                    this.statusMail= 'Good';
+                    this.voidField= '';
+                // Non è valida perché manca la @
+                } else if (!(this.email.includes('@'))) {
+                    this.statusMail= 'Invalid email format';
+                    this.voidField= 'One or more fields have an error.'
+                }
+            },
         },
-        created(){
-            this.handleSubmit()
-        }
+        // lo tolgo sennò si vede
+        // created(){
+        //     this.handleSubmit()
+        // }
     }
 </script>
 
@@ -119,9 +122,9 @@
                 </div>
             </div>
             <div class="footer-newsletter">
-                <h3>
+                <h2>
                     Join our newsletter
-                </h3>
+                </h2>
                 <p>
                     Subscribe to be informed about important developments in our club and football world. 
                 </p>
@@ -134,16 +137,16 @@
                     <p>
                         {{ statusMail }}
                     </p>
-                    <button id="subscribe" type="submit">Subscribe</button>
+                    <button id="subscribe" type="submit">Subscribe →</button>
                     <p>
                         {{ voidField }}
                     </p>
                 </form>
             </div>
             <div class="footer-education">
-                <h3>
+                <h2>
                     Education
-                </h3>
+                </h2>
                 <nav>
                     <ul>
                         <li v-for="(element,index) in navbarFooterEdu" :key="index">
@@ -155,9 +158,9 @@
                 </nav>
             </div>
             <div class="footer-quick-links">
-                <h3>
+                <h2>
                     Quick Links
-                </h3>
+                </h2>
                 <nav>
                     <ul>
                         <li v-for="(element,index) in navbarFooterQuickLinks" :key="index">
@@ -169,17 +172,17 @@
                 </nav>
             </div>
         </div>
-        <div class="footer-rights d-flex justify-content-center">
+        <div class="footer-rights">
             <p>
-                2022 Football Club - All rights reserved
+                © 2022 Football Club - All rights reserved
             </p>
         </div>
     </footer>
 </template>
 
 <style lang="scss" scoped>
-    @use '../node_modules/bootstrap/scss/bootstrap.scss';
     @use '../style/general.scss';
+    @use '../style/partials/mixins' as *;
     
     footer{
         background-image: url(../assets/imgs/footer-bg-football.jpg);
@@ -190,6 +193,7 @@
         padding: 2rem 3rem;
 
             .footer-rights{
+                @include flex-justify();
                 margin-top: 3rem;
             }
 
@@ -223,17 +227,16 @@
                 }
 
                 .footer-education {
+                    @include flex-column();
                     width: 20%;
-                    display: flex;
-                    flex-direction: column;
                     margin-left: 3rem;
 
                     li{
-                        display: flex;
+                        @include flex-align-center();
                         flex-wrap: wrap;
-                        align-items: center;
                         margin: 0;
-                        padding: 5px 0;
+                        padding: 8px 0;
+                        color: white;
                     }
 
                     li:before {
@@ -250,6 +253,10 @@
                     width: 40%;
                     padding: 0 8rem 0 1rem;
 
+                    p{
+                        margin-bottom: 1rem;
+                    }
+
                     button,
                     input {
                         width: 100%;
@@ -259,7 +266,6 @@
                         color: #062860;
                         border: 1px solid;
                         padding: 0 50px;
-                        position: relative;
                         font-size: 17px;
                         border-radius: 3rem;
                     }
@@ -283,9 +289,8 @@
                     width: 20%;
 
                     li{
-                        display: flex;
+                        @include flex-align-center();
                         flex-wrap: wrap;
-                        align-items: center;
                         margin: 0;
                         padding: 5px 0;
                     }
@@ -309,9 +314,11 @@
 
         a{
             text-decoration: none;
+            color: white;
         }
 
-        h3{
+        h2{
             font-weight: bold;
+            margin-bottom: 1.5rem;
         }
 </style>
