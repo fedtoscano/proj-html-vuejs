@@ -17,6 +17,9 @@ components: {
     mounted() {
         window.addEventListener('scroll', this.handleScroll);
         },
+    created(){
+        this.circleAroundPointer();
+    },
     beforeDestroy() {
         window.removeEventListener('scroll', this.handleScroll);
     },
@@ -29,8 +32,16 @@ methods: {
         top: 0,
         behavior: 'smooth'
     });
+    },
+
+    circleAroundPointer () {
+    document.addEventListener('mousemove', function(e){
+    const circlePointer = document.querySelector(".circle-pointer")
+    circlePointer.style.left = e.pageX + 'px';
+    circlePointer.style.top = e.pageY + 'px';
+    })
     }
-    }
+}
 }
 </script>
 
@@ -38,15 +49,35 @@ methods: {
 <template>
         <AppHeader />
         <AppMain />
-        <AppFooter />
-        
+        <AppFooter />        
         <button class="go-up-btn" v-show="showButton" @click="scrollToTop">
             <font-awesome-icon :icon="['fas', 'chevron-up']" />
         </button>
+
+    <div class="circle-pointer" 
+    style="
+    position: absolute;
+    width: 50px; 
+    height: 50px;
+    border: 2px solid #000; 
+    border-radius: 50%; 
+    pointer-events: none; 
+    transform: translate(-50%, -50%);
+    "></div>
 </template>
 
 <style lang="scss">
 @use './style/general.scss' as *;
+
+// .circle-pointer{
+//     position: absolute;
+//     width: 50px; 
+//     height: 50px;
+//     border: 2px solid #000; 
+//     border-radius: 50%; 
+//     pointer-events: none; 
+//     transform: translate(-50%, -50%);
+// }
 
 .go-up-btn {
     position: fixed;

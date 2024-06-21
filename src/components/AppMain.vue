@@ -17,8 +17,6 @@ export default {
         MainPlayers,
         MainSponsors,
         MainUpcomingMatches
-        
-
     },
 data() {
 return {  
