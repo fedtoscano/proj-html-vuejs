@@ -43,12 +43,17 @@ return {
             display: flex;
             justify-content: space-evenly;
             padding: 2em;
-
             img{
                 border: 1px solid white;
                 border-radius: 2rem;
                 padding: 1em .5em;
-                width: calc(100% / 7)
+                width: calc(100% / 7);
+                position: relative;
+                top: 0;
+                transition: all 1s;
+                &:hover{
+                    top: -4%;
+                }
             }
         }
     }
