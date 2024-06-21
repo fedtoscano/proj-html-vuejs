@@ -59,7 +59,7 @@ methods: {
             </article>
             
         </section>
-
+<!-- 
         <div class="select-buttons-container">
             <button v-for="(button, index) in [1,2,3,4]" 
                         :key="index" 
@@ -67,7 +67,7 @@ methods: {
                         :class="{'button-clicked' : buttonSelected===index}" 
                         @click="selectButton(index)">
             </button>
-        </div>
+        </div> -->
     </div>
 </template>
 
