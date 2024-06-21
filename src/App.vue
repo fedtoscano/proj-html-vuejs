@@ -54,30 +54,33 @@ methods: {
             <font-awesome-icon :icon="['fas', 'chevron-up']" />
         </button>
 
-    <div class="circle-pointer" 
-    style="
-    position: absolute;
-    width: 50px; 
-    height: 50px;
-    border: 2px solid #000; 
-    border-radius: 50%; 
-    pointer-events: none; 
-    transform: translate(-50%, -50%);
-    "></div>
+    <div class="circle-pointer">
+        <div class="little-dot"></div>
+    </div>
 </template>
 
 <style lang="scss">
 @use './style/general.scss' as *;
 
-// .circle-pointer{
-//     position: absolute;
-//     width: 50px; 
-//     height: 50px;
-//     border: 2px solid #000; 
-//     border-radius: 50%; 
-//     pointer-events: none; 
-//     transform: translate(-50%, -50%);
-// }
+.circle-pointer{
+    position: absolute;
+    width: 60px; 
+    height: 60px;
+    border: 2px solid white; 
+    border-radius: 50%; 
+    pointer-events: none; 
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease-out .05s;
+    .little-dot{
+        width: 5px;
+        height: 5px;
+        background-color: grey;
+        border-radius: 50%;
+    }
+}
 
 .go-up-btn {
     position: fixed;
