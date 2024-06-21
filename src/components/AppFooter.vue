@@ -77,8 +77,8 @@
 
 <template>
     <footer>
-        <div class="d-flex">
-            <div class="contatti">
+        <div class="container">
+            <div class="footer-contacts">
                 <div class="logo">
                     <img src="../assets/imgs/logo-footer-football.png" alt="Logo">
                 </div>
@@ -100,7 +100,7 @@
                             <li>
                                 <font-awesome-icon class="icon" icon="fa-regular fa-message" />
                                 <p>
-                                    example@example.come
+                                    example@example.com
                                 </p>
                             </li>
                         </ul>
@@ -134,7 +134,7 @@
                     <p>
                         {{ statusMail }}
                     </p>
-                    <button type="submit">Subscribe</button>
+                    <button id="subscribe" type="submit">Subscribe</button>
                     <p>
                         {{ voidField }}
                     </p>
@@ -181,31 +181,6 @@
     @use '../node_modules/bootstrap/scss/bootstrap.scss';
     @use '../style/general.scss';
     
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    .contatti,
-    .footer-education {
-        width: 20%;
-    }
-
-    .footer-newsletter {
-        width: 40%;
-        padding: 0 8rem 0 1rem;
-    }
-
-    .footer-quick-links{
-        width: 20%;
-    }
-
-
-    div.contacts nav ul li{
-        display: flex;
-        margin-bottom: 2rem;
-    }
-
     footer{
         background-image: url(../assets/imgs/footer-bg-football.jpg);
         background-position: center;
@@ -213,94 +188,130 @@
         background-size: cover;
         color: white;
         padding: 2rem 3rem;
-    }
 
-    footer .footer-education li:before,
-    footer .footer-quick-links li:before {
-        content: "";
-        width: 11px;
-        height: 4px;
-        display: inline-block;
-        background: #ffffff;
-        margin-right: 9px;
-    }
+            .footer-rights{
+                margin-top: 3rem;
+            }
 
-    .footer-education {
-        display: flex;
-        flex-direction: column;
-        margin-left: 3rem;
-    }
+            .container {
+            display: flex;
 
-    footer .footer-education li,
-    footer .footer-quick-links li{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        margin: 0;
-        padding: 5px 0;
-    }
+                h3{
+                    font-weight: bold ;
+                }
 
-    a{
-        text-decoration: none;
-    }
+                .footer-contacts {
+                    width: 20%;
 
-    .form{
-        background-color: white;
-        border-radius: 3.5rem;
-        padding: 1.5rem 2rem;
-    }
+                    nav ul li{
+                        display: flex;
+                        margin-bottom: 2rem;
+                    }
 
-    .email {
-        color: #a1a1a1;
-    }
+                    img{
+                        width: 20%;
+                        margin-bottom: 2rem;
+                    }
 
-    .submit{
-        color: #062961;
-    }
+                    .icon{
+                        font-size: 30px;
+                        margin-right: 1rem;
+                    }
 
-    img{
-        width: 20%;
-    }
+                    .socials a{
+                        margin-right: 1rem;
+                        font-size: 2rem;
+                        border: solid 1px;
+                        padding: 0.1rem 1rem;
+                    }
+                }
 
-    .icon{
-        font-size: 30px;
-        margin-right: 1rem;
-    }
+                .footer-education {
+                    width: 20%;
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 3rem;
 
-    button,
-    input {
-        width: 100%;
-        line-height: 70px;
-        display: inline-block;
-        background: #fff;
-        color: #062860;
-        border: 1px solid;
-        padding: 0 50px;
-        position: relative;
-        font-size: 17px;
-        border-radius: 3rem;
-    }
+                    li{
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        margin: 0;
+                        padding: 5px 0;
+                    }
 
-    .logo{
-        margin-bottom: 2rem;
-    }
+                    li:before {
+                        content: "";
+                        width: 11px;
+                        height: 4px;
+                        display: inline-block;
+                        background: #ffffff;
+                        margin-right: 9px;
+                    }
+                }
 
-    h3{
-        font-weight: bold ;
-    }
+                .footer-newsletter {
+                    width: 40%;
+                    padding: 0 8rem 0 1rem;
 
-    .error {
-        color: red;
-    }
+                    button,
+                    input {
+                        width: 100%;
+                        line-height: 70px;
+                        display: inline-block;
+                        background: #fff;
+                        color: #062860;
+                        border: 1px solid;
+                        padding: 0 50px;
+                        position: relative;
+                        font-size: 17px;
+                        border-radius: 3rem;
+                    }
 
-    .socials a{
-        margin-right: 1rem;
-        font-size: 2rem;
-        border: solid 1px;
-        padding: 0.1rem 1rem;
-    }
+                    .form{
+                        background-color: white;
+                        border-radius: 3.5rem;
+                        padding: 1.5rem 2rem;
 
-    .footer-rights{
-        margin-top: 3rem;
-    }
+                        #email {
+                            color: #a1a1a1;
+                        }
+
+                        #subscribe{
+                            color: #062961;
+                        }
+                    }
+                }
+
+                .footer-quick-links{
+                    width: 20%;
+
+                    li{
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        margin: 0;
+                        padding: 5px 0;
+                    }
+
+                    li:before {
+                        content: "";
+                        width: 11px;
+                        height: 4px;
+                        display: inline-block;
+                        background: #ffffff;
+                        margin-right: 9px;
+                    }
+                }
+            }
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        a{
+            text-decoration: none;
+        }
 </style>
