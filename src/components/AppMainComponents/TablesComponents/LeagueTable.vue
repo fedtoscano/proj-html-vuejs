@@ -93,7 +93,7 @@ data() {
             tbody tr td.lg-col {
                 padding-left: 1rem;
                 text-align: justify;
-                width: 60%;
+                width: 75%;
                 vertical-align: middle;
                 display: flex;
                 align-items: center;
