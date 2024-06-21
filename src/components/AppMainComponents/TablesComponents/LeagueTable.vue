@@ -67,6 +67,7 @@ data() {
             text-align: center;
             font-size: 2.5rem;
             margin: 3rem 0;
+            text-align: center;
         }
 
         table {
