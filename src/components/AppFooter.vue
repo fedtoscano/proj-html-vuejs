@@ -196,10 +196,6 @@
             .container {
             display: flex;
 
-                h3{
-                    font-weight: bold ;
-                }
-
                 .footer-contacts {
                     width: 20%;
 
@@ -313,5 +309,9 @@
 
         a{
             text-decoration: none;
+        }
+
+        h3{
+            font-weight: bold;
         }
 </style>
