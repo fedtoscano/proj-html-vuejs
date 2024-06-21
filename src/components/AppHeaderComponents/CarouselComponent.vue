@@ -67,6 +67,7 @@ created() {
 <style lang="scss" scoped>
 .item{
     position: relative;
+    text-transform: capitalize;
     .image-container{
         width: 100vw;
     }
@@ -95,6 +96,7 @@ created() {
             padding: 1.7rem 3.5rem;
             border-radius: 30px;
             font-weight: 900;
+            text-transform: capitalize;
                 &:hover{
                     cursor: pointer;
                 }
