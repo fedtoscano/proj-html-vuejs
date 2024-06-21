@@ -115,6 +115,7 @@ methods:{
             gap: 2rem;
             align-items: center;
             margin-bottom: 2em;
+            
             &::-webkit-scrollbar{
                 width: 0;
             }

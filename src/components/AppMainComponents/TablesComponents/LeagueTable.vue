@@ -114,6 +114,8 @@ data() {
             a{
                 text-decoration: none;
                 color: white;
+                font-size: 1.2rem;
+                text-transform: capitalize;
             }
         }
 </style>
