@@ -2,16 +2,20 @@
 import AppMain from './components/AppMain.vue';
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
+import AppLoader from './components/AppLoader.vue';
+
 
 export default {
 components: {
         AppHeader,
         AppMain,
-        AppFooter
+        AppFooter,
+        AppLoader
         },
         data() {
         return {
-            showButton: false
+            showButton: false,
+            loader: false,
         }
     } ,
     mounted() {
@@ -28,15 +32,23 @@ methods: {
         window.scrollTo({
         top: 0,
         behavior: 'smooth'
-    });
+        });
+    },
+    getLoad() {
+        setTimeout(() => {
+            this.loader = true;
+        }, 1300);
     }
+    },
+    created() {
+        this.getLoad();
     }
 }
 </script>
 
 
 <template>
-    <div id="app">
+    <div v-if="loader === true">
         <AppHeader />
         <AppMain />
         <AppFooter />
@@ -45,6 +57,7 @@ methods: {
             <font-awesome-icon :icon="['fas', 'chevron-up']"/>
         </button>
     </div>
+    <AppLoader v-else/>
 </template>
 
 <style lang="scss">
