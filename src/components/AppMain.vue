@@ -6,6 +6,7 @@ import MainNextMatch from './AppMainComponents/MainNextMatch.vue'
 import MainPlayers from './AppMainComponents/MainPlayers.vue'
 import MainSponsors from './AppMainComponents/MainSponsors.vue'
 import MainUpcomingMatches from './AppMainComponents/MainUpcomingMatches.vue'
+import MainTournament from "./AppMainComponents/MainTournament.vue"
 import { store } from '../store.js';
 
 
@@ -16,7 +17,10 @@ export default {
         MainNextMatch,
         MainPlayers,
         MainSponsors,
-        MainUpcomingMatches
+        MainUpcomingMatches,
+        MainTournament
+        
+
     },
 data() {
 return {  
@@ -28,13 +32,13 @@ return {
 <template>
     
     <main>
-        <p> main </p>
-        <MainLeagueTables/>
         <MainNextMatch/>
+        <MainTournament/>
+        <MainUpcomingMatches/>
         <MainPlayers/>
+        <MainLeagueTables/>
         <MainSponsors/>
         <MainArticles/>
-        <MainUpcomingMatches/>
     </main>
 
 </template>

@@ -48,62 +48,125 @@
                         link: '#',
                         active: false,
                     }
-                ]
+                ],
+                email: '',
+                statusMail: '',
+                voidField: '',
             }
         },
-        methods: {
+        methods:{
+            handleSubmit() {
+                // Non è valida perché il campo è vuoto
+                if (!this.email) {
+                    this.statusMail='This field is required.';
+                    this.voidField= 'One or more fields have an error.';
+                // E' valida perché include la @
+                } else if (this.email.includes('@')) {
+                    this.statusMail= 'Good';
+                    this.voidField= '';
+                // Non è valida perché manca la @
+                } else if (!(this.email.includes('@'))) {
+                    this.statusMail= 'Invalid email format';
+                    this.voidField= 'One or more fields have an error.'
+                }
+            },
+        },
+        // lo tolgo sennò si vede
+        // created(){
+        //     this.handleSubmit()
+        // }
     }
-}
 </script>
 
 <template>
     <footer>
-        <div class="d-flex">
-            <div class="contacts w-30">
-                <img src="../assets/imgs/logo-footer-football.png" alt="Logo">
-                <nav>
-                    <ul>
-                        <li>
-                            'New Jersey, USA',
-                    '+1(234)5678910',
-                    'example@example.com',
-                        </li>
-                        <font-awesome-icon icon="fa-regular fa-map" />
-                    </ul>
-                </nav>
+        <div class="container">
+            <div class="footer-contacts">
+                <div class="logo">
+                    <img src="../assets/imgs/logo-footer-football.png" alt="Logo">
+                </div>
+                <div class="contacts">
+                    <nav>
+                        <ul>
+                            <li>
+                                <font-awesome-icon class="icon" icon="fa-regular fa-map" />
+                                <p>
+                                    New Jersey, USA
+                                </p>
+                            </li>
+                            <li>
+                                <font-awesome-icon class="icon" icon="fa-regular fa-note-sticky" />
+                                <p>
+                                    +1 (234) 5678910
+                                </p>
+                            </li>
+                            <li>
+                                <font-awesome-icon class="icon" icon="fa-regular fa-message" />
+                                <p>
+                                    example@example.com
+                                </p>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="socials">
+                        <a href="#">
+                            <font-awesome-icon icon="fa-brands fa-facebook-f" />
+                        </a>
+                        <a href="#">
+                            <font-awesome-icon icon="fa-brands fa-instagram" />
+                        </a>
+                        <a href="#">
+                            <font-awesome-icon icon="fa-brands fa-twitter" />
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-newsletter w-40">
-                <h1>
+            <div class="footer-newsletter">
+                <h2>
                     Join our newsletter
-                </h1>
+                </h2>
                 <p>
                     Subscribe to be informed about important developments in our club and football world. 
                 </p>
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label"></label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Your Email Address">
-                </div>
+                <!--  prevent impredisce di refreshare-->
+                <!-- ascolta con v-on l'evento di submit del form -->
+                <form @click.prevent="handleSubmit">
+                    <label for="email"></label>
+                    <!-- V_model collega l'input dell'email al dato email nei data Vue -->
+                    <input id="email" v-model="email" type="email" placeholder="Your email address">
+                    <p>
+                        {{ statusMail }}
+                    </p>
+                    <button id="subscribe" type="submit">Subscribe →</button>
+                    <p>
+                        {{ voidField }}
+                    </p>
+                </form>
             </div>
-            <div class="footer-education w-20">
-                <h1>
+            <div class="footer-education">
+                <h2>
                     Education
-                </h1>
+                </h2>
                 <nav>
                     <ul>
                         <li v-for="(element,index) in navbarFooterEdu" :key="index">
-                            {{ element.name }}
+                            <a href="">
+                                {{ element.name }}
+                            </a>
                         </li>
                     </ul>
                 </nav>
             </div>
-            <div class="footer-quick-links w-10">
-                <h1>
+            <div class="footer-quick-links">
+                <h2>
                     Quick Links
-                </h1>
+                </h2>
                 <nav>
                     <ul>
                         <li v-for="(element,index) in navbarFooterQuickLinks" :key="index">
-                            {{ element.name }}
+                            <a href="">
+                                {{ element.name }}
+                            </a>                        
                         </li>
                     </ul>
                 </nav>
@@ -111,14 +174,151 @@
         </div>
         <div class="footer-rights">
             <p>
-                2022 Football Club - All rights reserved
+                © 2022 Football Club - All rights reserved
             </p>
         </div>
     </footer>
 </template>
 
 <style lang="scss" scoped>
-    @use '../node_modules/bootstrap/scss/bootstrap.scss';
     @use '../style/general.scss';
+    @use '../style/partials/mixins' as *;
+    
+    footer{
+        background-image: url(../assets/imgs/footer-bg-football.jpg);
+        background-position: center;
+        background-repeat: repeat-x;
+        background-size: cover;
+        color: white;
+        padding: 2rem 3rem;
 
+            .footer-rights{
+                @include flex-justify();
+                margin-top: 3rem;
+            }
+
+            .container {
+            display: flex;
+
+                .footer-contacts {
+                    width: 20%;
+
+                    nav ul li{
+                        display: flex;
+                        margin-bottom: 2rem;
+                    }
+
+                    img{
+                        width: 20%;
+                        margin-bottom: 2rem;
+                    }
+
+                    .icon{
+                        font-size: 30px;
+                        margin-right: 1rem;
+                    }
+
+                    .socials a{
+                        margin-right: 1rem;
+                        font-size: 2rem;
+                        border: solid 1px;
+                        padding: 0.1rem 1rem;
+                    }
+                }
+
+                .footer-education {
+                    @include flex-column();
+                    width: 20%;
+                    margin-left: 3rem;
+
+                    li{
+                        @include flex-align-center();
+                        flex-wrap: wrap;
+                        margin: 0;
+                        padding: 8px 0;
+                        color: white;
+                    }
+
+                    li:before {
+                        content: "";
+                        width: 11px;
+                        height: 4px;
+                        display: inline-block;
+                        background: #ffffff;
+                        margin-right: 9px;
+                    }
+                }
+
+                .footer-newsletter {
+                    width: 40%;
+                    padding: 0 8rem 0 1rem;
+
+                    p{
+                        margin-bottom: 1rem;
+                    }
+
+                    button,
+                    input {
+                        width: 100%;
+                        line-height: 70px;
+                        display: inline-block;
+                        background: #fff;
+                        color: #062860;
+                        border: 1px solid;
+                        padding: 0 50px;
+                        font-size: 17px;
+                        border-radius: 3rem;
+                    }
+
+                    .form{
+                        background-color: white;
+                        border-radius: 3.5rem;
+                        padding: 1.5rem 2rem;
+
+                        #email {
+                            color: #a1a1a1;
+                        }
+
+                        #subscribe{
+                            color: #062961;
+                        }
+                    }
+                }
+
+                .footer-quick-links{
+                    width: 20%;
+
+                    li{
+                        @include flex-align-center();
+                        flex-wrap: wrap;
+                        margin: 0;
+                        padding: 5px 0;
+                    }
+
+                    li:before {
+                        content: "";
+                        width: 11px;
+                        height: 4px;
+                        display: inline-block;
+                        background: #ffffff;
+                        margin-right: 9px;
+                    }
+                }
+            }
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        a{
+            text-decoration: none;
+            color: white;
+        }
+
+        h2{
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
 </style>
