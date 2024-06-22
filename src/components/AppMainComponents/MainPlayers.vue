@@ -28,7 +28,7 @@ isDragging(event) {
     if (!this.isDown) return;
     event.preventDefault();
     const x = event.pageX - this.$refs.carousel.offsetLeft;
-    const walk = (x - this.startX) * 3; // Adjust scrolling speed
+    const walk = (x - this.startX) * 2; // Adjust scrolling speed
     this.$refs.carousel.scrollLeft = this.scrollLeft - walk;
     
     const maxScrollLeft = this.$refs.carousel.scrollWidth - this.$refs.carousel.clientWidth;

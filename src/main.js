@@ -22,7 +22,6 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons"
-import { faChevronUp } from "@fortawesome/free-solid-svg-icons"
 
 
 /* add icons to the library */
