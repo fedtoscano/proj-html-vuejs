@@ -17,9 +17,17 @@ return {
 </script>
 
 <template>
-    <LeagueTable/>
-    <FixtureTables/>
+    <article>
+        <LeagueTable/>
+        <FixtureTables/>
+    </article>
+    
 </template>
 
 <style>
+
+article{
+    display: flex;
+    justify-content: space-between;
+}
 </style>

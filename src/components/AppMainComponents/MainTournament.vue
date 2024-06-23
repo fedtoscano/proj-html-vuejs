@@ -65,6 +65,7 @@ created() {
     h1{
         padding-bottom: 3rem;
         text-align: center;
+        text-transform: capitalize;
     }
 }
 ul{

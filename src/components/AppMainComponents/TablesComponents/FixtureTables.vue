@@ -246,14 +246,16 @@ methods:{
 <style lang="scss" scoped>
 
 article{
-    width: 650px;
     display: flex;
     flex-wrap: wrap;
-
+    width: calc((100% / 2) - 20px);
+    
     h1{
         font-weight: bold;
         color: black;
         font-size: 2.5rem;
+        margin: 3rem 0;
+        text-align: center;
 
     }
 
@@ -274,11 +276,10 @@ article{
         .full{
             width: 100%;
             text-align: center;
-            padding: 1.5rem;
-            background-color: black;
             color: white;
-        }
-       
+            background-color: #212121;
+            padding: 1.5rem;
+        }       
 
         .incontri{
             width: 100%;
@@ -303,7 +304,11 @@ article{
     
         p{
             align-self: center;
-            font-size: 1.5rem;
+
+            font-size: 1.2rem;
+
+            
+
         }
         
         .vs{

@@ -53,7 +53,7 @@ methods:{
 
                 <article v-for="(player, index) in store.players" :key="index">
                     <div class="image-container">
-                        <a href="">
+                        <a>
                             <img :src="player.pic" :alt="`${player.name} official photo`">
                         </a>
 
@@ -115,6 +115,7 @@ methods:{
             gap: 2rem;
             align-items: center;
             margin-bottom: 2em;
+            
             &::-webkit-scrollbar{
                 width: 0;
             }
