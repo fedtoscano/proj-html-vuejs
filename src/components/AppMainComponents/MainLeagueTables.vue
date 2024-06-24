@@ -24,13 +24,11 @@ return {
     
 </template>
 
-<style>
+<style lamg="scss" scoped> 
 
 article{
     display: flex;
-    max-width: 75%;
-    margin: 0 auto;
     justify-content: space-between;
-
+    padding: 3rem;
 }
 </style>

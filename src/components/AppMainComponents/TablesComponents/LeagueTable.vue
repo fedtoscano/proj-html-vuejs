@@ -59,7 +59,7 @@ data() {
 
     div.table-league{
         margin-left: 2rem;
-        width: 680px;
+        width: calc((100% / 2) - 20px);
     }
         h1{
             font-weight: bold;
@@ -67,13 +67,17 @@ data() {
             text-align: center;
             font-size: 2.5rem;
             margin: 3rem 0;
+            text-align: center;
         }
 
         table {
             background-color: #f5f5f5;
             text-align: center;
-            width: 680px;
             font-size: 20px;
+
+            td{
+                padding: .8rem 2rem;
+            }
 
             thead tr th:first-child{
                 text-align: start;
@@ -93,11 +97,15 @@ data() {
             tbody tr td.lg-col {
                 padding-left: 1rem;
                 text-align: justify;
-                width: 60%;
+                width: 100%;
+                vertical-align: middle;
+                display: flex;
+                align-items: center;
             }
 
             tbody tr td img.team-logo{
                 width: 60px;
+                margin: 0 1rem;
             }
 
             tbody tr td.sm-col{
@@ -106,14 +114,17 @@ data() {
         }
 
         button {
-        width: 680px;
+        width: 100%;
         background-color: #212121;
-        padding: 1rem 2rem;
+        padding: 1.5rem;
         color: white;
+        border: none;
 
             a{
                 text-decoration: none;
                 color: white;
+                font-size: 1.2rem;
+                text-transform: capitalize;
             }
         }
 </style>

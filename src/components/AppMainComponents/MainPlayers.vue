@@ -120,7 +120,6 @@ button{
     &::-webkit-scrollbar{
     width: 0;
     }
-
     &:active {
     cursor: grabbing;
     }

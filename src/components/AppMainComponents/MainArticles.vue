@@ -1,6 +1,6 @@
 <script>
 import { store } from '../../store.js';
-
+import VanillaTilt from 'vanilla-tilt';
 export default {
 data() {
 return {
@@ -47,10 +47,16 @@ isDragging(event) {
 },
 mounted() {
 this.$refs.carousel.scrollLeft = this.$refs.carousel.scrollWidth / 3;
-}
+},
+// Initialize VanillaTilt on article elements
+VanillaTilt.init(this.$refs.articles, {
+    max: 15,
+    speed: 100,
+    glare: true,
+    "max-glare": 0.5
+});
 };
 </script>
-
 
 <template>
 <div class="full-container">
@@ -65,7 +71,7 @@ this.$refs.carousel.scrollLeft = this.$refs.carousel.scrollWidth / 3;
     </section>
 
     <section class="article-container" ref="carousel" @mousedown="startDrag" @mousemove="isDragging" @mouseup="stopDrag" @mouseleave="stopDrag">
-        <article v-for="(article, index) in duplicatedArticles" :key="index">
+        <article v-for="(article, index) in duplicatedArticles" :key="index" ref="articles">
         <div class="article-info">
             <img :src="article.img" alt="" draggable="false">
             <p><span>{{ article.date }}</span> - <span>{{ article.topic }}</span></p>
@@ -80,10 +86,13 @@ this.$refs.carousel.scrollLeft = this.$refs.carousel.scrollWidth / 3;
         </article>
     </section>
 </div>
+
 </template>
+
 
 <style scoped lang="scss">
 .full-container {
+
 padding: 4rem;
 background-color: rgb(250, 250, 250);
 }

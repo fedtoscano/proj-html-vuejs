@@ -46,9 +46,9 @@ methods: {
     })
     }
 
-
     },
     }
+
 
 </script>
 
@@ -74,7 +74,7 @@ methods: {
     position: absolute;
     width: 60px; 
     height: 60px;
-    border: 2px solid white; 
+    border: 2px solid rgb(245, 245, 245); 
     border-radius: 50%; 
     pointer-events: none; 
     transform: translate(-50%, -50%);
