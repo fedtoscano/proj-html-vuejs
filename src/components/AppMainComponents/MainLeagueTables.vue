@@ -29,5 +29,6 @@ return {
 article{
     display: flex;
     justify-content: space-between;
+    padding: 3rem;
 }
 </style>

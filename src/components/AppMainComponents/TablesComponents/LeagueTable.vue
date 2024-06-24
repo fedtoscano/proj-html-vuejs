@@ -76,7 +76,7 @@ data() {
             font-size: 20px;
 
             td{
-                padding: 1rem 2rem;
+                padding: .8rem 2rem;
             }
 
             thead tr th:first-child{
