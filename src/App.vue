@@ -82,6 +82,7 @@ methods: {
     justify-content: center;
     align-items: center;
     transition: all ease-out .05s;
+    z-index: 2;
     .little-dot{
         width: 5px;
         height: 5px;
