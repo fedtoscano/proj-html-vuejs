@@ -28,7 +28,7 @@ isDragging(event) {
     if (!this.isDown) return;
     event.preventDefault();
     const x = event.pageX - this.$refs.carousel.offsetLeft;
-    const walk = (x - this.startX) * 2; // Adjust scrolling speed
+    const walk = (x - this.startX) * 2;
     this.$refs.carousel.scrollLeft = this.scrollLeft - walk;
     
     const maxScrollLeft = this.$refs.carousel.scrollWidth - this.$refs.carousel.clientWidth;
@@ -40,7 +40,6 @@ isDragging(event) {
 }
 },
 mounted() {
-// Initialize scroll position to the middle set of duplicated players
 this.$refs.carousel.scrollLeft = this.$refs.carousel.scrollWidth / 3;
 }
 }
@@ -117,7 +116,7 @@ button{
     align-items: center;
     margin-bottom: 2em;
     cursor: grab;
-    
+    scrollbar-width: none;
     &::-webkit-scrollbar{
     width: 0;
     }
@@ -125,6 +124,7 @@ button{
     &:active {
     cursor: grabbing;
     }
+
 }
 
     article{
