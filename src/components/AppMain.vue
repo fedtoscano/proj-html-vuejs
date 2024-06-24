@@ -20,7 +20,6 @@ export default {
         MainSponsors,
         MainUpcomingMatches,
         MainTournament,
-        AppFooter
     },
 data() {
 return {  
@@ -39,7 +38,6 @@ return {
         <MainLeagueTables/>
         <MainSponsors/>
         <MainArticles/>
-        <AppFooter/>
     </main>
 
 </template>

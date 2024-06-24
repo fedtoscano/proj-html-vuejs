@@ -15,7 +15,6 @@ methods: {
         }
     })
     .then( (response) => {
-        console.log(response.data);
         for (let index = 0; index < response.data.length; index++) {
             this.tournamentData.push(response.data[index]);
         }
