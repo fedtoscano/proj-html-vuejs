@@ -62,7 +62,7 @@
                     this.voidField= 'One or more fields have an error.';
                 // E' valida perché include la @
                 } else if (this.email.includes('@')) {
-                    this.statusMail= 'Good';
+                    this.statusMail= '';
                     this.voidField= '';
                 // Non è valida perché manca la @
                 } else if (!(this.email.includes('@'))) {
@@ -134,11 +134,11 @@
                     <!-- V_model collega l'input dell'email al dato email nei data Vue -->
                     <label for="email"></label>
                     <input id="email" v-model="email" type="email" placeholder="Your email address">
-                    <p>
+                    <p class="red">
                         {{ statusMail }}
                     </p>
                     <button @click.prevent="handleSubmit" id="subscribe" type="submit">Subscribe →</button>
-                    <p>
+                    <p class="yellow">
                         {{ voidField }}
                     </p>
                 </form>
@@ -321,5 +321,15 @@
         h2{
             font-weight: bold;
             margin-bottom: 1.5rem;
+        }
+
+        .yellow{
+            border: 1px solid yellow;
+            margin-top: 1rem;
+        }
+
+        .red{
+            text-align: center;
+            color: red;
         }
 </style>
