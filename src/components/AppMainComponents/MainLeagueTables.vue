@@ -1,12 +1,13 @@
 <script>
 import { store } from '../../store.js';
+import LeagueTable from './TablesComponents/LeagueTable.vue';
+import FixtureTables from "./TablesComponents/FixtureTables.vue"
 
 
 export default {
     components:{
-       
-        
-
+        LeagueTable,
+        FixtureTables
     },
 data() {
 return {  
@@ -16,9 +17,18 @@ return {
 </script>
 
 <template>
-   <p>MainLeagueTables</p>
-
+    <article>
+        <LeagueTable/>
+        <FixtureTables/>
+    </article>
+    
 </template>
 
-<style>
+<style lamg="scss" scoped> 
+
+article{
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem;
+}
 </style>

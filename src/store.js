@@ -1,6 +1,40 @@
+
 import { reactive } from 'vue'
 
 export const store = reactive({
+
+     navLinks: [
+        'home',
+        'fixtures & results',
+        'league table',
+        'players',
+        'gallery',
+        'blog',
+        'contact',
+    ],
+    CarouselContent: [
+        {
+            title: 'welcome to football club',
+            text: 'live match fix types and results.',
+            image: '../src/assets/imgs/slider1-1.jpg',
+        },
+        {
+            title: 'football club sport club',
+            text: 'private football matches.',
+            image: '../src/assets/imgs/slider2-1.jpg',
+        },
+        {
+            title: 'professional football football club',
+            text: 'football is the poetry of moement.',
+            image: '../src/assets/imgs/slider3.jpg',
+        },
+        {
+            title: 'football club sport club',
+            text: 'football is a head game.',
+            image: '../src/assets/imgs/slider4.jpg',
+        },
+    ],                         
+
     players: [
         {
         name: "Adam Brown",
@@ -29,7 +63,20 @@ export const store = reactive({
         role: "Forwarder",
         pic: "../src/assets/imgs/player4.jpg"
         },
+        {
+        name: "James Johnson",
+        number: "21",
+        role: "Defender",
+        pic: "../src/assets/imgs/player5.jpg"
+        },
+        {
+        name: "Charlie Roy",
+        number: "02",
+        role: "Goalkeeper",
+        pic: "../src/assets/imgs/player6.jpg"
+        },
     ],
+    
     upcomingMatches: [
         {
             id: 1,
@@ -159,6 +206,33 @@ export const store = reactive({
             lost: 4,
             points: 20,
             logo: "../src/assets/imgs/league-club-9.png"
+        },
+    ],
+    
+    sponsors:[
+        {
+            id:1,
+            img: "../src/assets/imgs/client2.png",
+        },
+        {
+            id:2,
+            img: "../src/assets/imgs/client3.png",
+        },
+        {
+            id:3,
+            img: "../src/assets/imgs/client4.png",
+        },
+        {
+            id:4,
+            img: "../src/assets/imgs/client7.png",
+        },
+        {
+            id:5,
+            img: "../src/assets/imgs/client9.png",
+        },
+        {
+            id:16,
+            img: "../src/assets/imgs/client10.png",
         },
     ],
 
