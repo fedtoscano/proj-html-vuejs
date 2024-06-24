@@ -52,6 +52,7 @@
                 email: '',
                 statusMail: '',
                 voidField: '',
+                showYellowBorder: false,
             }
         },
         methods:{
@@ -60,14 +61,17 @@
                 if (!this.email) {
                     this.statusMail='This field is required.';
                     this.voidField= 'One or more fields have an error.';
+                    this.showYellowBorder = true;
                 // E' valida perché include la @
                 } else if (this.email.includes('@')) {
                     this.statusMail= '';
                     this.voidField= '';
+                    this.showYellowBorder = false;
                 // Non è valida perché manca la @
                 } else if (!(this.email.includes('@'))) {
                     this.statusMail= 'Invalid email format';
                     this.voidField= 'One or more fields have an error.'
+                    this.showYellowBorder = true;
                 }
             },
         },
@@ -138,7 +142,7 @@
                         {{ statusMail }}
                     </p>
                     <button @click.prevent="handleSubmit" id="subscribe" type="submit">Subscribe →</button>
-                    <p class="yellow">
+                    <p :class="{ yellow: showYellowBorder }">
                         {{ voidField }}
                     </p>
                 </form>
@@ -323,7 +327,7 @@
             margin-bottom: 1.5rem;
         }
 
-        .yellow{
+        .yellow {
             border: 1px solid yellow;
             margin-top: 1rem;
         }
