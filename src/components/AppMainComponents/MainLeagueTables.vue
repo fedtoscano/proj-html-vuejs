@@ -24,7 +24,7 @@ return {
     
 </template>
 
-<style>
+<style lamg="scss" scoped> 
 
 article{
     display: flex;
