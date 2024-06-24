@@ -67,7 +67,7 @@ this.$refs.carousel.scrollLeft = this.$refs.carousel.scrollWidth / 3;
     <section class="article-container" ref="carousel" @mousedown="startDrag" @mousemove="isDragging" @mouseup="stopDrag" @mouseleave="stopDrag">
         <article v-for="(article, index) in duplicatedArticles" :key="index">
         <div class="article-info">
-            <img :src="article.img" alt="">
+            <img :src="article.img" alt="" draggable="false">
             <p><span>{{ article.date }}</span> - <span>{{ article.topic }}</span></p>
             <h3>{{ article.title }}</h3>
         </div>
@@ -108,7 +108,7 @@ width: 100px;
 
 .article-container {
 display: flex;
-gap: 5rem;
+gap: 2rem;
 overflow: hidden;
 margin-bottom: 3rem;
 cursor: grab;
@@ -130,7 +130,7 @@ gap: 1em;
 flex: 0 0 auto;
 overflow-x: hidden;
 white-space: none;
-width: calc((100% / 4) - 5rem);
+width: calc((100% / 4) - 1em);
 background-color: white;
 border-radius: 3rem;
 
@@ -153,6 +153,10 @@ button {
 .article-info {
     margin-bottom: 2em;
     width: 100%;
+    text-align: center;
+    h3{
+        font-size: 1.5em;
+    }
 }
 
 img {
