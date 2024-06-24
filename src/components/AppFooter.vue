@@ -130,14 +130,14 @@
                 </p>
                 <!--  prevent impredisce di refreshare-->
                 <!-- ascolta con v-on l'evento di submit del form -->
-                <form @click.prevent="handleSubmit">
-                    <label for="email"></label>
+                <form>
                     <!-- V_model collega l'input dell'email al dato email nei data Vue -->
+                    <label for="email"></label>
                     <input id="email" v-model="email" type="email" placeholder="Your email address">
                     <p>
                         {{ statusMail }}
                     </p>
-                    <button id="subscribe" type="submit">Subscribe →</button>
+                    <button @click.prevent="handleSubmit" id="subscribe" type="submit">Subscribe →</button>
                     <p>
                         {{ voidField }}
                     </p>

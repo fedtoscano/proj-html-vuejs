@@ -118,6 +118,7 @@ data() {
         background-color: #212121;
         padding: 1.5rem;
         color: white;
+        border: none;
 
             a{
                 text-decoration: none;

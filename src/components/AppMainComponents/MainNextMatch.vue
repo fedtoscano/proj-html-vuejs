@@ -37,11 +37,10 @@ return {
             <p>Expert Stadium</p>
         </div>
 
-        <button>view Match Details</button>
+        <button>View Match Details</button>
 
 
     </article>
-   
 
 </template>
 
