@@ -47,15 +47,14 @@ isDragging(event) {
 },
 mounted() {
 this.$refs.carousel.scrollLeft = this.$refs.carousel.scrollWidth / 3;
-},
 // Initialize VanillaTilt on article elements
 VanillaTilt.init(this.$refs.articles, {
     max: 15,
     speed: 100,
     glare: true,
-    "max-glare": 0.5
-});
-};
+    "max-glare": 0.5})
+}
+}
 </script>
 
 <template>
