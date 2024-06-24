@@ -10,7 +10,7 @@ data() {
 
 <template>
     <div class="table-league">
-        <h1>League table</h1>
+        <h1>League Table</h1>
         <table>
             <thead>
                 <tr>
